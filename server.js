@@ -228,8 +228,8 @@ function getCorpus(pouchId, titleAsUrl, corpusid) {
 
 }
 
-function getRequestedCorpus(corporaArray, titleAsUrl, corpusowner) {
-
+function getRequestedCorpus(corporaArray, titleAsUrl, corpusowner) { 
+  console.log('getRequestedCorpus '+titleAsUrl);
   var df = Q.defer();
   var resultingPromises = [];
 
@@ -239,7 +239,7 @@ function getRequestedCorpus(corporaArray, titleAsUrl, corpusowner) {
 
   Q.allSettled(resultingPromises)
     .then(function(results) {
-    for (corpus in corporaArray) {
+    for (var corpus = corporaArray.length; corpus >= 0; corpus--) {
       corporaArray[corpus].corpusinfo = {
         url: corpusowner + '/Unknown/' + corpusowner + '-firstcorpus',
         title: 'Unknown',
@@ -249,6 +249,16 @@ function getRequestedCorpus(corporaArray, titleAsUrl, corpusowner) {
       results.forEach(function(result) {
         if (result.state === 'fulfilled') {
           var value = result.value;
+	  console.log("Corpus "+ value.pouchname);
+          if(titleAsUrl != undefined){
+            console.log('We are looking for a specific corpus(' + titleAsUrl);
+            if(corpusArray[corpus].titleAsUrl != titleAsUrl){
+              console.log('We are looking for a specific corpus(' + titleAsUrl + '), but this wasnt it. ' + corpusArray[corpus].iitleAsUrl); 
+
+              corpusArray.splice(corpus,1);
+              return;
+            }
+          } 
           if (corporaArray[corpus].pouchname == value.pouchname) {
             corpusowner = value.pouchname.replace(/-.*/, '');
             value.url = corpusowner + '/' + value.titleAsUrl + '/' + value.pouchname;
