@@ -1,0 +1,44 @@
+extends index
+
+block content
+  .container
+    .row
+      .span3
+        p.text-center
+          img.img-polaroid(src='https://secure.gravatar.com/avatar/#{ghash}.jpg?s=200&d=retro&r=pg', alt='Your gravatar.com profile image')
+        div(style='margin: 10px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd')
+          if user.username
+            h1= user.firstname
+            p= user.username
+          else
+            h2.text-center Sorry! User does not exist.
+        .well.well-small
+          dl
+            dt
+              i(style='margin-top:3px').icon-envelope
+              | &nbsp;&nbsp;Email:
+            dd
+              a(href="mailto:#{user.email}") #{user.email}
+            dt
+              i(style='margin-top:3px').icon-folder-open
+              | &nbsp;&nbsp;Interests:
+            dd
+              | #{user.researchInterest}
+            dt
+              i(style='margin-top:3px').icon-user
+              | &nbsp;&nbsp;Affiliation:
+            dd
+              | #{user.affiliation}
+            dt
+              i(style='margin-top:3px').icon-comment
+              | &nbsp;&nbsp;Description:
+            dd
+              | #{user.description}
+      .span6.offset1
+        h1 Corpora
+        br
+        +renderCorporaList(corpora)
+    hr
+    footer
+      - var year = (new Date()).getFullYear()
+      p © #{user.username} #{year} All rights reserved.
