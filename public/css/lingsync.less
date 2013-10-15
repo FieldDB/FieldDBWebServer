@@ -1,0 +1,242 @@
+/* All content HTML files are contained in the partials folder */
+
+
+/* Change the following values to alter the color scheme */
+@pagebordercolor: #2433A7;
+@mainbgcolor: #FFFFFF;
+@darkestcolor: #5D5E5E;
+@darkcolor: #6D8CA0;
+@mediumcolor: #F1F0FF;
+@lightcolor: #FCFCFC;
+
+/* Change the following value to alter the text color */
+@darktextcolor: #000000;
+@lighttextcolor: #FFFFFF;
+
+/* Change the following value to alter the border color */
+@bordercolor: #000000;
+
+@pagemargin: 50px;
+
+@navfont: 'Numans', sans-serif;
+@contentfont: 'Quattrocento', sans-serif;
+
+
+body {
+  background-color: @mainbgcolor;
+  color: @darktextcolor;
+  height: 100%;
+  overflow: hidden;
+}
+
+.margin_container {
+  position: relative;
+  margin-left: @pagemargin;
+  margin-right: @pagemargin;
+}
+
+.top_page_border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 10px;
+  background-color: @pagebordercolor;
+  border-bottom: 2px solid #000000;
+}
+
+.title_bar {
+  height: 75px;
+  margin-top: 20px;
+}
+
+.logo_image {
+  float: left;
+  height: 100%;
+}
+
+.lingsync_link {
+  height: 100%;
+  float: right;
+  display: table;
+}
+
+.lingsync_link a {
+  display: table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: @navfont;
+}
+
+
+.lingsync_link a:link    {color:@pagebordercolor;}
+.lingsync_link a:visited {color:@pagebordercolor;}
+.lingsync_link a:hover   {color:@darkestcolor;}
+
+.navbar_container {
+  width: 100%;
+  margin-top: 5px;
+  background-color: @darkestcolor;
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-left: 50px;
+  height: 30px;
+  text-align: left;
+  width: 100%;
+  display: inline-block;
+  z-index: 100;
+}
+
+.navbar span {
+  padding-right: 75px;
+  position: relative;
+  font-family: @navfont;
+  font-size: 14px;
+ /* text-transform: uppercase; */
+  font-weight: 700;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a:link    {color:@mediumcolor;}
+.navbar a:visited {color:@mediumcolor;}
+.navbar a:hover   {color:@pagebordercolor;}
+
+.dropdown {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 2px;
+  text-align: left;
+  background-color: @darkestcolor;
+  border: 1px solid @bordercolor;
+  z-index: 1000;
+}
+
+.content_div {
+  position: absolute;
+  color: @lightcolor;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  top: 145px;
+  min-height: 400px;
+  text-align: left;
+  font-family: @contentfont;
+  background-color: @darkcolor;
+}
+
+.content_div img {
+  height: 40px;
+}
+
+.main_body_bottom_bar_container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-color: @pagebordercolor;
+  z-index: 1000;
+  border-top: 2px solid #000000;
+}
+
+.main_body_bottom_bar {
+  position: absolute;
+  bottom: 10px;
+  right: @pagemargin;
+  left: @pagemargin;
+  text-align: center;
+  min-height: 100px;
+  background-color: @mediumcolor;
+  box-shadow: 0px 0px 10px @darkestcolor;
+  border-radius: 5px;
+}
+
+.nav_image_container {
+  display: inline-block;
+  width: 20%;
+  padding-top: 15px;
+}
+
+.nav_image_container:hover {
+  cursor: pointer;
+  color: @pagebordercolor;
+}
+
+.nav_image {
+  height: 100px;
+  padding-left: 25px;
+}
+
+.nav_image img {
+  height: 60px;
+}
+
+.nav_image span {
+  font-family: @navfont;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* ANIMATIONS */
+
+.collapse-hide, .collapse-show {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+}
+
+.collapse-hide {
+  width: 100%;
+}
+.collapse-hide.collapse-hide-active {
+  width: 20%;
+}
+
+.collapse-show {
+  width: 20%;
+}
+.collapse-show.collapse-show-active {
+  width: 100%;
+}
+
+.fade-hide, .fade-show {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+}
+
+.fade-hide {
+  opacity: 1;
+  left: 0px;
+  right: 0px;
+}
+.fade-hide.fade-hide-active {
+  opacity: 0;
+  left: 800;
+  right: -800px;
+}
+
+.fade-show {
+  opacity: 0;
+  left: 100%;
+  right: -800px;
+}
+
+.fade-show.fade-show-active {
+  opacity: 1;
+  left: 0px;
+  right: 0px;
+}

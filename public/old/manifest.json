@@ -10,7 +10,7 @@
     }
   },
   "icons": {
-    "128": "img/icon128.png"
+    "128": "img/icon128_dev.png"
   },
   "permissions": [
     "https://fonts.googleapis.com/",
