@@ -25,12 +25,13 @@
 body {
   background-color: @mainbgcolor;
   color: @darktextcolor;
-  height: 100%;
-  overflow: hidden;
+  // height: 100%;
+  overflow-x: hidden;
 }
 
 .margin_container {
   position: relative;
+  height: auto;
   margin-left: @pagemargin;
   margin-right: @pagemargin;
 }
@@ -123,19 +124,56 @@ body {
 
 .content_div {
   position: absolute;
-  color: @lightcolor;
-  padding: 10px;
   left: 0;
   right: 0;
   top: 145px;
-  min-height: 400px;
-  text-align: left;
-  font-family: @contentfont;
-  background-color: @darkcolor;
+  // min-height: 100px;
 }
 
 .content_div img {
   height: 40px;
+}
+
+.content {
+  background-color: @darkcolor;
+  color: @lightcolor;
+  text-align: left;
+  font-family: @contentfont;
+  padding: 10px;
+  margin-bottom: 150px;
+}
+
+.content_heading {
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 250px;
+  background-color: @mediumcolor;
+  box-shadow: 0px 0px 10px @darkestcolor;
+  border-radius: 5px;
+  color: @darkestcolor;
+  font-size: 30px;
+  font-weight: 700;
+
+}
+
+.content_heading img {
+    vertical-align: middle;
+}
+
+.content_text {
+  display: inline-block;
+  padding: 10px;
+  margin: 2%;
+  vertical-align: top;
+  text-align: justify;
+  color: @darkestcolor;
+  background-color: @mediumcolor;
+  box-shadow: 0px 0px 10px @darkestcolor;
+  border-radius: 5px;
+}
+
+.three {
+  width: 25%;
 }
 
 .main_body_bottom_bar_container {
@@ -143,7 +181,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 25px;
   background-color: @pagebordercolor;
   z-index: 1000;
   border-top: 2px solid #000000;
@@ -152,10 +190,10 @@ body {
 .main_body_bottom_bar {
   position: absolute;
   bottom: 10px;
-  right: @pagemargin;
-  left: @pagemargin;
+  right: 15%;
+  left: 15%;
   text-align: center;
-  min-height: 100px;
+  height: 45px;
   background-color: @mediumcolor;
   box-shadow: 0px 0px 10px @darkestcolor;
   border-radius: 5px;
@@ -164,7 +202,7 @@ body {
 .nav_image_container {
   display: inline-block;
   width: 20%;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 .nav_image_container:hover {
@@ -173,12 +211,15 @@ body {
 }
 
 .nav_image {
-  height: 100px;
-  padding-left: 25px;
+  height: 45px;
+  position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav_image img {
-  height: 60px;
+  height: 80%;
+  vertical-align: middle;
 }
 
 .nav_image span {

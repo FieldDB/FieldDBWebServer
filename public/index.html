@@ -20,14 +20,12 @@
 <div class="navbar_container">
 <div class="navbar">
     <span><a ng-mouseover="dropdownToShow=null" href="#/home">Home</a></span>
-    <span><a ng-mouseover="dropdownToShow=null" href="#/">People</a></span>
+    <span><a ng-mouseover="dropdownToShow=null" href="#/people">People</a></span>
     <span><a ng-mouseover="dropdownToShow='dropdown1'" href="#/">Social</a><div ng-show="dropdownToShow=='dropdown1'" class="dropdown" ng-mouseleave="dropdownToShow=null"><a href="//www.facebook.com/LingSyncApp">Facebook</a><br /><br /><a href="//twitter.com/LingSync">Twitter</a></div></span>
     <span><a ng-mouseover="dropdownToShow=null" href="#/contact">Contact Us</a></span>
 </div>
 </div>
-
-    <ng-view></ng-view>
-
+  <ng-view></ng-view>
 </div>
   <script src="libs/angular/angular.js" type="text/javascript"></script>
   <script src="js/app.js" type="text/javascript"></script>

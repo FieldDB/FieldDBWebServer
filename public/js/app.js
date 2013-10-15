@@ -9,6 +9,9 @@ config(['$routeProvider',
       .when('/home', {
         templateUrl: 'partials/home.html'
       })
+      .when('/people', {
+        templateUrl: 'partials/people.html'
+      })
       .otherwise({
         redirectTo: '/home'
       });
