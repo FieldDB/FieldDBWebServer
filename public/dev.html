@@ -1,93 +1,152 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<!-- Stylesheets -->
-<link rel="stylesheet" type="text/css"
-	href="./bootstrap/css/bootstrap.css">
-<link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<script type="text/javascript" src="./libs/jquery.js"></script>
-
-<script type="text/javascript" src="./libs/analytics.js"></script>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="dev/bootstrap.min.css">
+	<script type="text/javascript" src="dev/libs/analytics.js"></script>
 </head>
 <body>
-	<div class="well container">
-		<div class="row span12">
-			<div class="span6">
-				<h1>FieldDB Beta</h1>
-				<h2>
-					Bi-Weekly Developers News Channel<small> with videos :)</small>
-				</h2>
-				<h3>A Field Database which adapts to its user's terminology
-					and/or I-Language</h3>
-				<p>Officially Launched August 1st, @CAML in Patzún, Guatemala</p>
-				<p>
-					To install or get non-technical info: <a href="http://lingsync.org">http://lingsync.org</a>
-				</p>
+<div class="well container">
+	<div class="row span12">
+		<div class="col-md-6">
+			<h1>OpenSourceFieldLinguistics</h1>
+			<h2>
+				Bi-Weekly Developers News Channel<small> with videos :)</small>
+			</h2>
+			<h3>A Field Database which adapts to its user's terminology
+				and/or I-Language</h3>
+			<p>Officially Launched August 1st 2012, @CAML in Patzún, Guatemala</p>
+			<p>
+				To install or get non-technical info: <a href="http://lingsync.org">http://lingsync.org</a>
+			</p>
 
-				<p>
-					If you want more frequent techie updates you can find out what we
-					are doing by "watching" our project on GitHub. GitHub is a project
-					management tool for decentralized projects, kind of like Facebook
-					for programmers. Anyone can add features, ask questions or leave us
-					comments or notes directly in our GitHub issue tracker: <a
-						target="_blank"
-						href="https://github.com/OpenSourceFieldlinguistics/FieldDB/issues/milestones?direction=asc&sort=due_date">FieldDB
-						on GitHub </a>
-				</p>
+			<p>
+				If you want more frequent techie updates you can find out what we
+				are doing by "watching" <a
+				target="_blank"
+				href="https://github.com/OpenSourceFieldlinguistics/FieldDB/issues/milestones?direction=asc&sort=due_date&state=closed">our project on GitHub</a>. GitHub is a project
+				management tool for decentralized projects, kind of like Facebook
+				for programmers. Anyone can add features, ask questions or leave us
+				comments or notes directly in our GitHub issue tracker: <a
+				target="_blank"
+				href="https://github.com/OpenSourceFieldlinguistics/FieldDB/issues/milestones?direction=asc&sort=due_date&state=closed">FieldDB
+				on GitHub </a>
+			</p>
 
-			</div>
-			<div id="twitterBox" class="span4">
-				<script>
-          //http://code.google.com/p/chromium/issues/detail?id=81637
-          //https://twitter.com/about/resources/widgets/widget_profile?
-          //http://stackoverflow.com/questions/6754251/need-help-with-twitter-widget
-
-          $(document).ready(function() {
-            $.getScript("https://widgets.twimg.com/j/2/widget.js", function() {
-              // dynamically add the get social sidebar
-              $('body').prepend('<div id="social"></div>');
-
-              new TWTR.Widget({
-                version : 2,
-                type : 'profile',
-                id : 'twitterBox',
-
-                rpp : 4,
-                interval : 30000,
-                width : 250,
-                height : 300,
-                theme : {
-                  shell : {
-                    background : '#55a1ba',
-                    color : '#ffffff'
-                  },
-                  tweets : {
-                    background : '#fcf9fc',
-                    color : '#0f010f',
-                    links : '#2d61a1'
-                  }
-                },
-                features : {
-                  scrollbar : true,
-                  loop : false,
-                  live : true,
-                  behavior : 'all'
-                }
-              }).render().setUser('LingSync').start();
-
-            });
-          });
-        </script>
-			</div>
 		</div>
+		<div id="twitterBox" class="col-md-6">
 
+			<a class="twitter-timeline" href="https://twitter.com/LingSync" data-widget-id="403246532205363201">Tweets by @LingSync</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			</script>
+
+		</div>
 	</div>
+</div>
 	<hr />
 	<!-- <div class="well">
-		<h1>April 27 2013 - Week 52 &amp; 1.1</h1>
+		<h1>Oct 12 2013 - Week 76 &amp; 77</h1>
+	</div>
+	<div class="well">
+		<h1>Sept 28 2013 - Week 74 &amp; 75</h1>
+	</div>
+	<div class="well">
+		<h1>Sept 14 2013 - Week 72 &amp; 73</h1>
+	</div> -->
+	<div class="well">
+		<h1>Aug 31 2013 - Week 70 &amp; 71</h1>
+
+		<h2>Automatically generate LaTeX trees</h2>
+		<p>
+			Back in May @louisa-belig was working on a recursive function that could generate bracketing for bare structure trees (you can add the nodes labeles to your taste) using QTree. This week we got together and put it into the app! Now when you leave the morphemes field, if you dont already have a syntactic tree it will generate a left, right and mixed branching tree for you! You can edit the trees, if they are already there they wont be overwritten. If you want fresh trees, just empty the syntactic tree field and it will be regenerated the next time you leave the morphemes line. To export your data in LaTex, as always, you can click on the LaTeX button on datalists or on individual datum. Eventually we might add a server side process to generate your LaTeX pdf for you so you can see the result immediately (this will be helpful if you are crafting your own trees). You can put any valid LaTeX code in fields which contain the keyword "latex" (or LaTeX or Latex etc). This means you can add your own custom fields that are LaTeX source code if you want. <a href="http://latex.informatik.uni-halle.de/latex-online/latex.php?spw=2&id=560798_BetylxsMdl0i" target="_blank">You can use Halle-Wittenberg University's online LaTeX compiler if you dont have one</a> setup on your computer. 
+		</p>
+
+
+		<h2>Click and clean your corpus using the morpheme visualization</h2>
+		<p>
+			We changed the colors of the morpheme visualizer (blue for short/functional, red for long/content) and made it so that if you click on it, it will run a search for you for that morpheme. We put the visualization into the search widget too so you can click through your morphemes and clean your corpus as you see words that contain the morpheme but didnt have the right segmentation etc. 
+		</p>
+
+		<h2>Add a copyright to your corpus</h2>
+		<p>
+			We added some default copyright info to the corpus views so that users can put copyrights on their corpus if they choose. By default we choose the same license as Wikipedia, the Creative Commons Share Alike license:
+		</p>
+		<blockquote>
+			<div class="eight columns omega">
+				<div class="two columns alpha">
+					<img src="dev/images/creative_commons.png" alt="" width="88" height="31">
+				</div>
+				<div class="six columns omega">
+					<p>
+						<strong>
+							Attribution-ShareAlike
+							<br>
+							CC BY-SA
+						</strong>
+					</p>
+
+					<p>
+						This license lets others remix, tweak, and build upon your work even for commercial purposes, as long as they credit you and license their new creations under the identical terms. This license is often compared to “copyleft” free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects.
+					</p>
+
+					<p>
+					<span style="color: #000000;">
+						<a target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0">
+							View License Deed</a>
+							| <a  target="_blank"  href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">
+							View Legal Code</a>
+						</span>
+					</p>
+				</div>
+			</div>
+		</blockquote>
+
+		<h2>Search your corpus serverside</h2>
+		<p>
+			For the past few weeks @jdhorner has been integrating ElasticSearch as a backend for our Lexicon webservices. This will make it possible to index and search huge corpora. ElasticSearch is designed to run on many machines, in many data centers. It is possible to "shard" your data so that the load of searching your corpus is distributed. None of the corpora have gotten this big yet, but for her internship in the fall @louisa-belig will be working on importing websites into her database which means the data will be too big to search client side. 
+		</p>
+
+		<p>
+			New apps can access this server side search via the API at https://lexicondev.lingsync.org
+		</p>
+
+		<p> 
+			This week he added new buttons to train your lexicon. This will go through your datum, and reindex it to have the latest information. You can also enter a query like in the app using fieldname:searchsubstring  and it will return JSON results for you to export. Later we will be adding datalist widgets to display the results for you (both in raw format or in a user friendly format) and let you embed your choice of datalist widgets in your public url page.
+		</p>
+
+	</div>
+	<div class="well">
+		<h1>Aug 17 2013 - Week 68 &amp; 69</h1>
+
+		<p>This summer we have been busy, adding new stuff every friday but we didnt have time to post on the blog... hopefully we will fill in the details when we have more time in September.
+		</p>
+	</div>
+	<div class="well">
+		<h1>Aug 3 2013 - Week 66 &amp; 67</h1>
+	</div>
+	<div class="well">
+		<h1>July 20 2013 - Week 64 &amp; 65</h1>
+	</div>
+	<div class="well">
+		<h1>July 6 2013 - Week 62 &amp; 63</h1>
+	</div>
+	<div class="well">
+		<h1>June 22 2013 - Week 60 &amp; 61</h1>
+	</div>
+	<div class="well">
+		<h1>June 8 2013 - Week 58 &amp; 59</h1>
+	</div> 
+	<div class="well">
+		<h1>May 25 2013 - Week 56 &amp; 57</h1>
+	</div>
+	<div class="well">
+		<h1>May 11 2013 - Week 54 &amp; 55</h1>
+	</div>
+	<div class="well">
+		<h1>April 27 2013 - Week 52 &amp; 53</h1>
 	</div>
 	<div class="well">
 		<h1>April 13 2013 - Week 50 &amp; 51</h1>
@@ -97,7 +156,53 @@
 	</div>
 	<div class="well">
 		<h1>March 16 2013 - Week 46 &amp; 47</h1>
-	</div> -->
+
+		<h2>See all the data in a session</h2>
+		<p>We added a new link in the user interface so you can just click
+			to see all the data in a session. What it does is enter the session's
+			goal into the search box, and press enter automatically so you get a
+			new data list filled with datum that would match that goal. This lets
+			you see similar datum rather than exactly what is in that session,
+			since the only reason you might want to search a session is probably
+			to find the data from that or a similar session.
+		</p>
+
+		<h2>FirstCorpus data fields are for practicing</h2>
+		<p>We always planned that the first corpus anyone would make would
+			probably be a practice corpus, thats why it has a non-descriptive
+			name. But, when you create a second corpus, based on the first one,
+			it was using the datumfields from your practice corpus. @katire asked
+			us if we could make the datum fields the defaults if it was a
+			practice corpus, that way the user isn't stuck with some strange fields
+			they put in while they were practicing. Now its done, if you create a
+			new corpus, and you're in your first corpus, you will get default
+			fields only. But if you are in another corpus, we will copy the
+			fields for you so you don't have to re-create them (since we expect
+			that you will probably have a set group of fields that you use for
+			most of your corpus we don't want to make you re-create them, its
+			easier to copy them for you and you can delete them later.)
+		</p>
+
+		<h2>Data Cleaning get-together</h2>
+		<p>@gretchenmcc @carolrose @cesine @senhorzinho got together to
+			play with the Migmaq project's data cleaning efforts. They wrote some
+			new map-reduce functions for <a href="https://t.co/Kw6isF2Epg" target="_blank">data cleaning</a> and identified a couple of
+			new fields which would be necessary for cleaning, that should be
+			automatically learned and human editable like syntacticCategory.
+		</p>
+
+		<h2>New User Interfaces Modules</h2>
+		<p>
+			<a href="https://github.com/senhorzinho" target="_blank">senhorzinho</a>
+			has been working on a <a
+			href="https://github.com/OpenSourceFieldlinguistics/FieldDB/tree/master/angular_client/modules/spreadsheet"
+			target="_blank">new module</a> that lets users input data like an
+			Excel sheet. The module will probably ready for use in a couple of
+			months.
+		</p>
+
+	</div>
+
 	<div class="well">
 		<h1>March 2 2013 - Week 44 &amp; 45 - Release the results from the hackathon</h1>
 
@@ -1003,7 +1108,7 @@
 		</p>
 
 		<iframe width="560" height="315"
-			src="http://www.youtube.com/embed/MOG22jpAPPM" frameborder="0"
+			src="https://www.youtube.com/embed/MOG22jpAPPM" frameborder="0"
 			allowfullscreen></iframe>
 
 		<h2>Production servers are live</h2>
@@ -1217,40 +1322,40 @@
 
 		<h2>Paper prototype photos</h2>
 
-		<img src="/images/devblog/LL1Welcome_UnitChoice.jpg" height="50%"
+		<img src="dev/images/devblog/LL1Welcome_UnitChoice.jpg" height="50%"
 			width="50%" />
 		<p>The top is the welcome screen for learners, and the bottom is
 			the screen to choose which thematic unit the learner wants to work
 			on. The unit choice screen also gives a quick update on how much of
 			the material the student has finished, by showing progress bars.</p>
 
-		<img src="/images/devblog/LL2Lesson.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL2Lesson.jpg" height="50%" width="50%" />
 		<p>The top is the lesson choice screen, which also has progress
 			bars. Each lesson consists of three components: Dialogue, Vocabulary,
 			and Exercise.</p>
 
-		<img src="/images/devblog/LL2LessonIntro.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL2LessonIntro.jpg" height="50%" width="50%" />
 		<p>When the student chooses a lesson, an intro screen will show up
 			to summarize the coming material.</p>
 
-		<img src="/images/devblog/LL3Dialogue.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL3Dialogue.jpg" height="50%" width="50%" />
 		<p>Dialogue: This has a video and audio of a conversation between
 			two speakers. The student can show textual transcription &
 			translation, or choose to hide the text to better immerse themselves
 			in spoken language. The transcription is also time-synched with the
 			audio.</p>
 
-		<img src="/images/devblog/LL5VocabChoice.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL5VocabChoice.jpg" height="50%" width="50%" />
 		<p>Vocab: In this menu, the student chooses which vocab item that
 			they want to learn.</p>
 
-		<img src="/images/devblog/LL6Vocab.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL6Vocab.jpg" height="50%" width="50%" />
 		<p>Vocab: Here, there is a picture/video and audio demonstrating
 			the word. It comes with optional transcription and translation.
 			Students practice the pronunciation by recording themselves and
 			listening to their recording compared to the given one.</p>
 
-		<img src="/images/devblog/LL4Exercise.jpg" height="50%" width="50%" />
+		<img src="dev/images/devblog/LL4Exercise.jpg" height="50%" width="50%" />
 		<p>Exercise: There is a textual question (in English), and the
 			students record their response. They can also listen to the correct
 			response.</p>
@@ -1386,7 +1491,7 @@
 			good enough internet at our hotel. Here they are:</p>
 
 		<iframe width="560" height="315"
-			src="http://www.youtube.com/embed/videoseries?list=PL7D2CC06C80AF754C&amp;hl=en_US"
+			src="https://www.youtube.com/embed/videoseries?list=PL7D2CC06C80AF754C&amp;hl=en_US"
 			frameborder="0" allowfullscreen></iframe>
 
 		<h2>Demo and Feedback</h2>
@@ -1401,7 +1506,7 @@
 				href="https://docs.google.com/presentation/pub?id=1KQaq4jbGM9roakDNPuj_jxWPL5v0NXJNBWaLJpqDzHc&start=false&loop=false&delayms=10000">slide
 				show</a> and we put up a spiffy <a href="http://fieldlinguist.com">website</a>.
 			The demo was <a target="_blank"
-				href="http://www.youtube.com/user/MuniPatzun?blend=1&ob=0"> live
+				href="https://www.youtube.com/user/MuniPatzun?blend=1&ob=0"> live
 				streamed</a> by the <a target="_blank"
 				href="http://patzun.gob.gt/index.php?option=com_content&view=article&id=391:idiomas&catid=99:cultura&Itemid=439">Patzun
 				municipality</a>.
@@ -1417,7 +1522,7 @@
 			extract info from their transcribed child language acquisition data.
 		</p>
 		<iframe width="560" height="315"
-			src="http://www.youtube.com/embed/videoseries?list=PL7A21CF3CEC45B4C2&amp;hl=en_US"
+			src="https://www.youtube.com/embed/videoseries?list=PL7A21CF3CEC45B4C2&amp;hl=en_US"
 			frameborder="0" allowfullscreen></iframe>
 		<h2>The big merge</h2>
 		<p>This week we merged in the localization branch and the bug
@@ -1490,7 +1595,7 @@
 			audio</h1>
 
 		<iframe width="420" height="315"
-			src="http://www.youtube.com/embed/vEPfnUnnbj0" frameborder="0"
+			src="https://www.youtube.com/embed/vEPfnUnnbj0" frameborder="0"
 			allowfullscreen></iframe>
 
 
@@ -1572,7 +1677,7 @@
 		<h2>Beta Tester Tutorials</h2>
 
 		<iframe width="720" height="515"
-			src="http://www.youtube.com/embed/videoseries?list=PLUrH6CNxFDrMtraL8hTLbLsQwdw1117FT"
+			src="https://www.youtube.com/embed/videoseries?list=PLUrH6CNxFDrMtraL8hTLbLsQwdw1117FT"
 			frameborder="0" allowfullscreen></iframe>
 
 	</div>
@@ -1662,7 +1767,7 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/NOvuy516Tw4" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/authentication_sequence.jpg" height="50%"
+		<img src="dev/images/authentication_sequence.jpg" height="50%"
 			width="50%" />
 
 		<p>In this video we look at what happens when a new user comes to
@@ -1671,7 +1776,7 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/BhCaO8ZvmXY" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/new_user_storyboard.jpg" height="50%" width="50%" />
+		<img src="dev/images/new_user_storyboard.jpg" height="50%" width="50%" />
 
 		<p>
 			In this video we discuss offline authentication, how a user must use
@@ -1683,7 +1788,7 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/5XD6H-JpyDo" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/confidential_datum_descryption_sequence.jpg"
+		<img src="dev/images/confidential_datum_descryption_sequence.jpg"
 			height="50%" width="50%" />
 
 
@@ -1693,7 +1798,7 @@
 		<h1>June 15 2012 - Week 8 - Prettifying and getting all the Views
 			in place, and a new Name!</h1>
 
-		<img src="images/team_at_work.jpg" width="800" />
+		<img src="dev/images/team_at_work.jpg" width="800" />
 		<p>This week continued much from last week. We also prettified the
 			app, using Bootstrap by Twitter, a framework for cute buttons, icons
 			and fonts. There is still the import and search user stories to
@@ -1753,7 +1858,7 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/B7PTZlzBNb8" frameborder="0"
 			allowfullscreen></iframe>
-		<img src='/images/pageLoad.jpeg'
+		<img src="dev/images/pageLoad.jpeg"
 			alt="Chrome extension page load sequential diagram" height="300"
 			width="300" />
 
@@ -1761,14 +1866,14 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/dgzZq0-E5NM" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/dataEntrySD.jpeg" alt="Data Entry Sequence Diagram"
+		<img src="dev/images/dataEntrySD.jpeg" alt="Data Entry Sequence Diagram"
 			height="300" width="300" />
 
 		<h2>Import Sequence Diagram</h2>
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/gNfsm5my0i4" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/importSD.jpeg" alt-"Import Sequence
+		<img src="dev/images/importSD.jpeg" alt-"Import Sequence
 			Diagram" height="300" width="300" />
 
 
@@ -1840,7 +1945,7 @@
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/4oeE085nDg4" frameborder="0"
 			allowfullscreen></iframe>
-		<img src="/images/entityRelationDiagram.jpg" alt-"Import Sequence
+		<img src="dev/images/entityRelationDiagram.jpg" alt-"Import Sequence
 			Diagram" height="300" width="300" />
 
 	</div>
@@ -1899,16 +2004,16 @@
 		<p>The main dashboard can be very cluttered: have a team feed,
 			multiple data entries, and the drop down quick search (a la
 			spotlight), This one is the Llama skin:</p>
-		<img src="/images/user_interface_design_gimp.png" alt="llama skin" />
+		<img src="dev/images/user_interface_design_gimp.png" alt="llama skin" />
 		<p>The data entry page could be much less cluttered, here is an
 			example of the three dots extended:</p>
-		<img src="/images/user_interface_design_gimp_less_cluttered.png"
+		<img src="dev/images/user_interface_design_gimp_less_cluttered.png"
 			alt="leaf skin" /> <img
-			src="/images/user_interface_design_gimp-main_dashboard_leaf_skin.png"
+			src="dev/images/user_interface_design_gimp-main_dashboard_leaf_skin.png"
 			alt="leaf skin" /> <img
-			src="/images/user_interface_design_gimp-main_dashboard_light_skin.png"
+			src="dev/images/user_interface_design_gimp-main_dashboard_light_skin.png"
 			alt="light skin" /> <img
-			src="/images/user_interface_design_gimp-main_dashboard_dark_skin.png"
+			src="dev/images/user_interface_design_gimp-main_dashboard_dark_skin.png"
 			alt="dark skin" />
 
 	</div>
@@ -1916,43 +2021,43 @@
 		<h1>April 27 2012 - Week 2 - Paper Prototypes</h1>
 		<p>We got together and started desigining the UI. Below are this
 			week's deliverables.</p>
-		<img src="/images/dashboard.jpeg" alt="general layout" />
+		<img src="dev/images/dashboard.jpeg" alt="general layout" />
 		<p>General Layout-- each component (newsfeed, list, and datum
 			entry page can be moved and minimized)</p>
-		<img src="/images/navigation.jpeg"
+		<img src="dev/images/navigation.jpeg"
 			alt="added search bar and preferences" />
 		<p>The menu bar now has a search bar and preferences.</p>
-		<img src="/images/dataDropdown.jpeg"
+		<img src="dev/images/dataDropdown.jpeg"
 			alt="slight change in the menu options" />
 		<p>In addition, there is a new dropdown menu for data.</p>
 
-		<img src="/images/search.jpeg"
+		<img src="dev/images/search.jpeg"
 			alt="search bar expands down into the list view" />
 		<p>Search bar expands down into the list view.</p>
-		<img src="/images/listView.jpeg" alt="check boxes and datum menu" />
+		<img src="dev/images/listView.jpeg" alt="check boxes and datum menu" />
 		<p>The list view will have check boxes and datum Menu bar.</p>
 
-		<img src="/images/datumMenu.jpeg"
+		<img src="dev/images/datumMenu.jpeg"
 			alt="this bar will only appear when you mouse over" />
 		<p>This is the datum menu bar. It will only appear when you mouse
 			over</p>
-		<img src="/images/datumView.jpeg" alt="" /> <img
-			src="/images/ipaKeyboard.jpeg" alt="appears when you mouse over" />
+		<img src="dev/images/datumView.jpeg" alt="" /> <img
+			src="dev/images/ipaKeyboard.jpeg" alt="appears when you mouse over" />
 		<p>There will be a little keyboard button underneath the phonetic
 			and orthography lines. In addition, we will give users the option of
 			typing in TIPA that will automatically insert the correct character.</p>
-		<img src="/images/advancedSearch.jpeg"
+		<img src="dev/images/advancedSearch.jpeg"
 			alt="exactly like the datum page" />
 		<p>The advanced search will look exactly like datum page.</p>
 
-		<img src="/images/newsFeed.jpeg" alt="gives team notificaitons" />
+		<img src="dev/images/newsFeed.jpeg" alt="gives team notificaitons" />
 		<p>The News Feed gives team notifications.</p>
 
-		<img src="/images/datumPreferences.jpeg"
+		<img src="dev/images/datumPreferences.jpeg"
 			alt="accessed from the wrench" />
 		<p>These preferences will be accessed from wrench.</p>
 
-		<img src="/images/userPref.jpeg"
+		<img src="dev/images/userPref.jpeg"
 			alt="various preferences with permissions" />
 		<p>Here are other various preferences and permissions.</p>
 
@@ -1963,28 +2068,6 @@
 		menus and some of the import export. It was replaced above with the
 		paper prototypes.
 	</div>
-
-	<!-- Le javascript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="./libs/jquery.js">
-    
-  </script>
-	<script src="./bootstrap/js/bootstrap-transition.js"></script>
-	<script src="./bootstrap/js/bootstrap-alert.js"></script>
-	<script src="./bootstrap/js/bootstrap-modal.js"></script>
-	<script src="./bootstrap/js/bootstrap-dropdown.js"></script>
-	<script src="./bootstrap/js/bootstrap-scrollspy.js"></script>
-	<script src="./bootstrap/js/bootstrap-tab.js"></script>
-	<script src="./bootstrap/js/bootstrap-tooltip.js"></script>
-	<script src="./bootstrap/js/bootstrap-popover.js"></script>
-	<script src="./bootstrap/js/bootstrap-button.js"></script>
-	<script src="./bootstrap/js/bootstrap-collapse.js"></script>
-	<script src="./bootstrap/js/bootstrap-carousel.js"></script>
-	<script src="./bootstrap/js/bootstrap-typeahead.js"></script>
-
-
-
 
 </body>
 </html>
