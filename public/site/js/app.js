@@ -6,7 +6,7 @@ angular.module('LingSyncWebSiteApp', []).
 config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
-      .when('/home', {
+      .when('', {
         templateUrl: 'site/partials/home.html'
       })
       .when('/people', {
@@ -16,7 +16,7 @@ config(['$routeProvider',
         templateUrl: 'site/partials/contact.html'
       })
       .otherwise({
-        redirectTo: '/home'
+        redirectTo: ''
       });
   }
 ])
@@ -32,7 +32,7 @@ config(['$routeProvider',
     $scope.navigateToHome = function() {
       $scope.pageLoaded = false;
       $scope.divToShow('welcome');
-      window.location.assign("#/home");
+      window.location.assign("");
       var hideInitialDivTransition = $timeout(function() {
         $scope.pageLoaded = true;
       }, 1000);
