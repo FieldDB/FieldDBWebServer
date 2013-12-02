@@ -16,7 +16,7 @@ config(['$routeProvider',
         templateUrl: 'site/partials/contact.html'
       })
       .otherwise({
-        redirectTo: ''
+        templateUrl: 'site/partials/home.html'
       });
   }
 ])
