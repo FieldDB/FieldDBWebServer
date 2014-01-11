@@ -15,6 +15,9 @@ config(['$routeProvider',
       .when('/contact', {
         templateUrl: 'site/partials/contact.html'
       })
+      .when('/tutorial', {
+        templateUrl: 'site/partials/tutorial.html'
+      })
       .otherwise({
         templateUrl: 'site/partials/home.html'
       });
