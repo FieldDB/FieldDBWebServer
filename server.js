@@ -9,14 +9,20 @@ var https = require('https'),
   couch_keys = require("./lib/couchkeys_devserver");
 
 //read in the specified filenames as the security key and certificate
-node_config.httpsOptions.key = fs.readFileSync(node_config.httpsOptions.key);
-node_config.httpsOptions.cert = fs.readFileSync(node_config.httpsOptions.cert);
 
 var connect = node_config.usersDbConnection.protocol + couch_keys.username + ':' +
   couch_keys.password + '@' + node_config.usersDbConnection.domain +
   ':' + node_config.usersDbConnection.port +
   node_config.usersDbConnection.path;
 var nano = require('nano')(connect);
+
+
+// var errorHandler = require('express-error-handler'),
+//   handler = errorHandler({
+//     static: {
+//       '404': '404.html'
+//     }
+//   });
 
 // configure Express
 app.configure(function() {
@@ -31,6 +37,7 @@ app.configure(function() {
   app.use(express.session({
     secret: 'CtlFYUMLlrwr1VdIr35'
   }));
+  // app.use(errorHandler.httpError(404) );
   app.use(app.router);
 });
 
@@ -96,8 +103,12 @@ app.get('/db/:pouchname', function(req, res) {
       res.render('corpus', data);
   })
     .fail(function(error) {
-    console.log(error);
-    res.redirect('/public');
+    console.log(new Date() + " there was a problem getCorpusFromPouchname in route /db/:pouchname" + error);
+    if (pouchname.indexOf("public") > -1) {
+      res.redirect("404.html");
+    } else {
+      res.redirect('/public');
+    }
   })
     .done();
 
@@ -146,8 +157,12 @@ app.get('/:user/:corpus/:pouchname', function(req, res) {
       res.render('corpus', data);
   })
     .fail(function(error) {
-    console.log(error);
-    res.redirect('/public');
+    console.log(new Date() + " there was a problem getCorpusFromPouchname in route /:user/:corpus/:pouchname " + error);
+    if (pouchname.indexOf("public") > -1) {
+      res.redirect("404.html");
+    } else {
+      res.redirect('/public');
+    }
   })
     .done();
 
@@ -194,12 +209,14 @@ function getData(res, user, corpus) {
 
   user = sanitizeAgainstInjection(user);
   if(user === false){
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
   corpus = sanitizeAgainstInjection(corpus);
   if(corpus === false){ 
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
 
@@ -222,12 +239,22 @@ function getData(res, user, corpus) {
     res.render(template, data);
   })
     .fail(function(error) {
-    console.log(error);
-    var redirect = '/public';
-    if (corpus) {
-      redirect = '/' + user;
+    console.log(new Date() + " couldnt get the user "+ error.message);
+    if(error && error.message && (error.message.indexOf("ror happened in your connect") > -1 || error.message.indexOf("ame or password is incorre") > -1)){
+      res.status(500);
+      res.send("<script> window.setTimeout(function(){\nalert('The server is currently unable to serve your request: code 71921. Please notify us of this erorr code, or check again later. Taking you to the contact us form...');\n window.location.href='https://docs.google.com/forms/d/18KcT_SO8YxG8QNlHValEztGmFpEc4-ZrjWO76lm0mUQ/viewform'; },100);</script>  ");
+      return;
     }
-    res.redirect(redirect);
+    if (error && error.message === "missing" && user !== "public") {
+      console.log(" user "+ user+ "was missing, redirecting to the public user");
+      res.redirect("/public)")
+      return;
+    }
+
+    console.log(new Date() + " There was an error on this server, we are unable to take the user to the public user. ");
+    res.status(404);
+   res.redirect("404.html")
+    return;
   })
     .done();
 
@@ -235,8 +262,9 @@ function getData(res, user, corpus) {
 
 function getCorpusFromPouchname(pouchname) {
   pouchname = sanitizeAgainstInjection(pouchname);
-  if(!pouchname){ 
-    res.status(404).send('Not found');
+  if (!pouchname) {
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
 
@@ -286,7 +314,8 @@ function getCorpusFromPouchname(pouchname) {
 function getUser(userId) {
   userId = sanitizeAgainstInjection(userId);
   if(!userId){ 
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
 
@@ -319,17 +348,20 @@ function getCorpus(pouchId, titleAsUrl, corpusid) {
 
   pouchId = sanitizeAgainstInjection(pouchId);
   if(!pouchId){ 
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
   titleAsUrl = sanitizeAgainstInjection(titleAsUrl);
   if(titleAsUrl  === false){ 
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
   corpusid = sanitizeAgainstInjection(corpusid);
   if(corpusid === false){ 
-    res.status(404).send('Not found');
+    res.status(404);
+   res.redirect("404.html")
     return;
   }
 
@@ -342,7 +374,7 @@ function getCorpus(pouchId, titleAsUrl, corpusid) {
   }
   corpusdb.get(doc, function(error, result) {
     if (error) {
-      console.log(error);
+      console.log(new Date() + " there was a problem getting corpusdb" + error);
       df.reject(new Error(error));
     } else {
       if (!result) {
@@ -395,6 +427,19 @@ function getRequestedCorpus(corporaArray, titleAsUrl, corpusowner) {
 
 }
 
-https.createServer(node_config.httpsOptions, app).listen(node_config.port);
+console.log("process.env.NODE_DEPLOY_TARGET "+ process.env.NODE_DEPLOY_TARGET );
 
-console.log(new Date() + 'Node+Express server listening on port %d', node_config.port);
+if (true || process.env.NODE_DEPLOY_TARGET === "production") {
+  app.listen(node_config.port);
+  console.log("Running in production mode behind an Nginx proxy, Listening on http port %d", node_config.port);
+} else {
+  // config.httpsOptions.key = FileSystem.readFileSync(config.httpsOptions.key);
+  // config.httpsOptions.cert = FileSystem.readFileSync(config.httpsOptions.cert);
+  node_config.httpsOptions.key = fs.readFileSync(node_config.httpsOptions.key);
+  node_config.httpsOptions.cert = fs.readFileSync(node_config.httpsOptions.cert);
+
+  https.createServer(node_config.httpsOptions, app).listen(node_config.port);
+  // https.createServer(config.httpsOptions, AuthWebService).listen(node_config.port, function() {
+    console.log("Listening on https port %d", node_config.port);
+  // });
+}
