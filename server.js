@@ -576,3 +576,5 @@ if (process.env.NODE_DEPLOY_TARGET === "production") {
   //console.log("Listening on https port %d", node_config.port);
   // });
 }
+
+console.log("please open http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.VVtxQVVVhBc to see how you should accept the security cerrtificate"); 
