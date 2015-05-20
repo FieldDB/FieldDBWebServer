@@ -9,6 +9,15 @@ config(['$routeProvider',
       .when('', {
         templateUrl: 'site/partials/home.html'
       })
+      .when('/applications', {
+        templateUrl: 'site/partials/applications.html'
+      })
+      .when('/spreadsheet', {
+        templateUrl: 'site/partials/spreadsheet.html'
+      })
+      .when('/dative', {
+        templateUrl: 'site/partials/dative.html'
+      })
       .when('/people', {
         templateUrl: 'site/partials/people.html'
       })
@@ -17,6 +26,9 @@ config(['$routeProvider',
       })
       .when('/tutorial', {
         templateUrl: 'site/partials/tutorial.html'
+      })
+      .when('/dativetutorial', {
+        templateUrl: 'site/partials/dativetutorial.html'
       })
       .otherwise({
         templateUrl: 'site/partials/home.html'
