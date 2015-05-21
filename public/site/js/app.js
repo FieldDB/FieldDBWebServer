@@ -18,6 +18,9 @@ config(['$routeProvider',
       .when('/dative', {
         templateUrl: 'site/partials/dative.html'
       })
+      .when('/comparisontable', {
+        templateUrl: 'site/partials/comparisontable.html'
+      })
       .when('/people', {
         templateUrl: 'site/partials/people.html'
       })
