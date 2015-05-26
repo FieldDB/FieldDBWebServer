@@ -564,7 +564,7 @@ function getRequestedCorpus(corporaCollection, titleAsUrl, corpusowner) {
 
 if (process.env.NODE_DEPLOY_TARGET === "production") {
   app.listen(node_config.port);
-  //console.log("Running in production mode behind an Nginx proxy, Listening on http port %d", node_config.port);
+  console.log("Running in production mode behind an Nginx proxy, Listening on http://localhost:%d", node_config.port);
 } else {
   // config.httpsOptions.key = FileSystem.readFileSync(config.httpsOptions.key);
   // config.httpsOptions.cert = FileSystem.readFileSync(config.httpsOptions.cert);
@@ -573,8 +573,7 @@ if (process.env.NODE_DEPLOY_TARGET === "production") {
 
   https.createServer(node_config.httpsOptions, app).listen(node_config.port);
   // https.createServer(config.httpsOptions, AuthWebService).listen(node_config.port, function() {
-  //console.log("Listening on https port %d", node_config.port);
+  console.log("Listening on https://localhost:%d", node_config.port);
   // });
 }
-
 console.log("please open http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.VVtxQVVVhBc to see how you should accept the security cerrtificate");
