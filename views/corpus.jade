@@ -41,7 +41,7 @@ block content
         .row-fluid
           .span11.offset1
             - var dbname = corpora[0].dbname.toString()
-            form.form-inline#searchCorpus(action='http://localhost:3185/search/#{dbname}', method='POST', enctype='application/json', style='display:inline-block')
+            form.form-inline#searchCorpus(action='https://lexicon.lingsync.org/search/#{dbname}', method='POST', enctype='application/json', style='display:inline-block')
               input(type='text', id='queryString', name='queryString', placeholder='Enter search terms…')
               | &nbsp;&nbsp;
               button.btn.btn-small.btn-success(type='submit', id='corpus_search')

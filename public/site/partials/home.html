@@ -1,139 +1,120 @@
+        <div class="content_div" data-ng-show="contentToShow=='welcome'" data-ng-animate="'fade'">
+            <div class="content">
+                <h1>
+                    A Free Tool for Creating and Maintaining a Shared Database For Communities, Linguists and Language Learners
+                </h1>
+            </div>
+        </div>
+        <div class="content_div" data-ng-show="contentToShow=='share'" data-ng-animate="'fade'">
+            <div class="content_heading">
+                <img src="site/img/share.png"> Share
+            </div>
+            <div class="content">
+                <div class="content_text">
+                    <h3>
+                        Collaboration
+                    </h3>Speakers, linguists, and learners can contribute remotely to one centralized database, distributing the responsibility of documentation.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Access
+                    </h3>The database is shared between researchers and the community. Everyone with permission has access to the data, ensuring that language information is not just on the computers of a few people.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Security
+                    </h3>While it is easy to share data, the database is secure. Permission settings control who can see what.
+                </div>
+            </div>
+        </div>
+        <div class="content_div" data-ng-show="contentToShow=='search'" data-ng-animate="'fade'">
+            <div class="content_heading">
+                <img src="site/img/search.png"> Search
+            </div>
+            <div class="content">
+                <div class="content_text">
+                    <h3>
+                        Customize
+                    </h3>LingSync is customizable. You decide what is important and how much detail goes into your database.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Search
+                    </h3>Data is easy to tag, search, and sort (<i>under development</i>) by factors you can choose (i.e., speaker, date, morpheme or construction type).
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Import&nbsp;/&nbsp;Export
+                    </h3>It is very easy to import and export data in a variety of formats (<i>under development</i>).
+                </div>
+            </div>
+        </div>
+        <div class="content_div" data-ng-show="contentToShow=='revitalize'" data-ng-animate="'fade'">
+            <div class="content_heading">
+                <img src="site/img/revitalize.png"> Revitalize
+            </div>
+            <div class="content">
+                <div class="content_text half_width">
+                    <h3>
+                        Participate
+                    </h3>Learners can participate in recording and transcribing their language. Users can easily search the database for specific words or phrases, and discover patterns on their own.
+                </div>
+                <div class="content_text half_width">
+                    <h3>
+                        Learn
+                    </h3>Material can be converted from LingSync to language lessons on a complementary language learning app (<a href="https://play.google.com/store/apps/details?id=com.github.opensourcefieldlinguistics.fielddb.lessons.georgian">see example</a>).
+                </div>
+            </div>
+        </div>
+        <div class="content_div" data-ng-show="contentToShow=='features'" data-ng-animate="'fade'">
+            <div class="content_heading">
+                <img src="site/img/features.png"> Features
+            </div>
+            <div class="content">
+                <div class="content_text">
+                    <h3>
+                        Free &amp; Accessible
+                    </h3>LingSync is free and open source. It is also a web app, which means it works in any desktop or mobile browser.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Safe
+                    </h3>LingSync automatically backs up your database. Data history is accessible, making it easy to go back and undo mistakes.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Smart
+                    </h3>LingSync learns from your data to streamline morpheme glossing.
+                </div>
+                <div class="content_text">
+                    <h3>
+                        Customizable
+                    </h3>LingSync is customizable. You decide what is important and how much detail goes into your database.
+                </div>
 
-<div class="mainTitleBackground">
-	<div id="mainBodyHeader">
-		<span>A Free Tool for Creating and Maintaining a Shared
-			Database For Communities, Linguists and Language Learners</span>
-	</div>
-</div>
-
-<div class="imageMenu">
-	<img src="site/img/share_opaque.png" width=115
-		ng-click="show_section='share'" ng-hide="show_section!='share'"><img
-		src="site/img/share.png" width=115 ng-click="show_section='share'"
-		ng-hide="show_section=='share'">&nbsp; 
-		
-		<img
-		src="site/img/search_opaque.png" width=115 ng-click="show_section='search'"
-		ng-hide="show_section!='search'"><img src="site/img/search.png"
-		width=115 ng-click="show_section='search'"
-		ng-hide="show_section=='search'">&nbsp;
-		
-		<img
-		src="site/img/revitalize_opaque.png" width=115
-		ng-click="show_section='revitalize'"
-		ng-hide="show_section!='revitalize'"><img
-		src="site/img/revitalize.png" width=115
-		ng-click="show_section='revitalize'"
-		ng-hide="show_section=='revitalize'">&nbsp;
-		
-		<img
-		src="site/img/features_opaque.png" width=115
-		ng-click="show_section='key_features'"
-		ng-hide="show_section!='key_features'"><img src="site/img/features.png"
-		width=115 ng-click="show_section='key_features'"
-		ng-hide="show_section=='key_features'">&nbsp;
-		
-		<img
-		src="site/img/video_opaque.png" width=115
-		ng-click="show_section='watch_video'" ng-hide="show_section!='watch_video'"><img
-		src="site/img/video.png" width=115
-		ng-click="show_section='watch_video'" ng-hide="show_section=='watch_video'">
-</div>
-<div class="bulletSection" ng-show="show_section=='share'">
-	<table width="100%">
-		<tr>
-			<td width="33%"><div class="bullet">
-					<hr>
-					Speakers, linguists, and learners can contribute remotely to one
-					centralized database, distributing the responsibility of
-					documentation.
-				</div></td>
-			<td width="33%"><div class="bullet">
-					<hr>
-					The database is shared between researchers and the community.
-					Everyone with permission has access to the data, ensuring that
-					language information is not just on the computers of a few people.
-				</div></td>
-			<td width="33%"><div class="bullet">
-					<hr>
-					While it is easy to share data, the database is secure and
-					encrypted. Permission settings control who can see what.
-				</div></td>
-		</tr>
-	</table>
-</div>
-
-<div class="bulletSection" ng-show="show_section=='search'">
-	<table width="100%">
-		<tr>
-			<td width="33%"><div class="bullet">
-					<hr>
-					LingSync is customizable. You decide what is important and how much
-					detail goes into your database.
-				</div></td>
-			<td width="33%"><div class="bullet">
-					<hr>
-					Data is easy to tag, search, and sort by factors you can create
-					(i.e., speaker, date, morpheme or construction type).
-				</div></td>
-			<td width="33%"><div class="bullet">
-					<hr>
-					It is very easy to import and export data in a variety of formats.
-				</div></td>
-		</tr>
-	</table>
-</div>
-
-<div class="bulletSection" ng-show="show_section=='revitalize'">
-	<table width="100%">
-		<tr>
-			<td width="48%"><div class="bullet">
-					<hr>
-					Learners can participate in recording and transcribing their
-					language.</span> <span>Users can easily search the database for
-						specific words or phrases, and discover patterns on their own. 
-				</div></td>
-			<td width="48%"><div class="bullet">
-					<hr>
-					Material can be easily converted from LingSync to language lessons
-					on a complementary language learning app (still under development).
-				</div></td>
-		</tr>
-	</table>
-</div>
-
-<div class="bulletSection" ng-show="show_section=='key_features'">
-	<table width="100%">
-		<tr>
-			<td width="48%"><div class="bullet">
-					<hr>
-					LingSync is a Chrome app, which means it works on Windows, Mac,
-					Linux, Android, iPad, and also offline.
-				</div></td>
-			<td width="48%"><div class="bullet">
-					<hr>
-					LingSync is free and open source. You maintain control of your
-					data.
-				</div></td>
-		</tr>
-		<tr>
-			<td width="48%"><div class="bullet">
-					<hr>
-					LingSync learns from your data to streamline morpheme glossing.
-				</div></td>
-			<td width="48%"><div class="bullet">
-					<hr>
-					LingSync automatically backs up your database. Previous versions
-					are accessible, making it easy to undo any mistakes.
-				</div></td>
-		</tr>
-	</table>
-</div>
-
-<div class="bulletSection pagination-centered"
-	ng-show="show_section=='watch_video'">
-	<iframe width="420" height="315"
-		src="https://www.youtube.com/embed/4XrO8AhGNqo" frameborder="0"
-		allowfullscreen></iframe>
-</div>
-
+            </div>
+        </div>
+        <div class="main_body_bottom_bar_container">
+            <div class="main_body_bottom_bar">
+                <div class="nav_image_container" ng-click="divToShow('features');">
+                    <div class="nav_image">
+                        <img src="site/img/features.png"> <span>Features</span>
+                    </div>
+                </div>                
+                <div class="nav_image_container" ng-click="divToShow('share');">
+                    <div class="nav_image">
+                        <img src="site/img/share.png"> <span>Share</span>
+                    </div>
+                </div>
+                <div class="nav_image_container" ng-click="divToShow('revitalize');">
+                    <div class="nav_image">
+                        <img src="site/img/revitalize.png"> <span>Revitalize</span>
+                    </div>
+                </div>
+                <!-- <div class="nav_image_container" ng-click="divToShow('search');">
+                    <div class="nav_image">
+                        <img src="site/img/search.png"> <span>Search</span>
+                    </div>
+                </div>                
+            </div> -->
+        </div>

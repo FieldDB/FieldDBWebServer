@@ -10,7 +10,7 @@
     }
   },
   "icons": {
-    "128": "img/icon128_dev.png"
+    "128": "corpus-pages/img/icon128.png"
   },
   "permissions": [
     "https://fonts.googleapis.com/",
