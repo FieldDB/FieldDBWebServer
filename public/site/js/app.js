@@ -33,6 +33,9 @@ config(['$routeProvider',
       .when('/dativetutorial', {
         templateUrl: 'site/partials/dativetutorial.html'
       })
+      .when('/warning', {
+        templateUrl: 'site/partials/warning.html'
+      })
       .otherwise({
         templateUrl: 'site/partials/home.html'
       });
