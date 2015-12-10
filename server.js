@@ -12,7 +12,7 @@ var path = require("path");
 var fs = require("fs");
 
 var deploy_target = process.env.NODE_DEPLOY_TARGET || "local";
-// deploy_target = "devserver"; 
+// deploy_target = "devserver";
 var node_config = require("./lib/nodeconfig_" + deploy_target);
 var couch_keys = require("./lib/couchkeys_" + deploy_target);
 
@@ -225,3 +225,4 @@ if (process.env.NODE_DEPLOY_TARGET === "production") {
 console.log("please open http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.VVtxQVVVhBc to see how you should accept the security cerrtificate"); 
 
 exports.app = app;
+console.log("please open http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.VVtxQVVVhBc to see how you should accept the security cerrtificate");
