@@ -144,17 +144,12 @@
   </head>
   <body>
     <div class="">
-<<<<<<< HEAD:public/404.html
-      <h1><a href ="http://lingsync.org"><img src="site/img/lingsync_logo.png" border="0"></a><br/> Not found </h1>
-
-=======
       <h1><a href ="http://lingsync.org"><img src="site/img/lingsync-logo.png" border="0"></a><br/> Internal Server Error </h1>
       {{#each userFriendlyErrors}}
         <p>{{this}}</p>
       {{/each}}
->>>>>>> master:views/500.html
       <img class="failwhale" src="http://www.yiyinglu.com/failwhale/images/failwhale.gif">
-      {{#unless userFriendlyErrors}} 
+      {{#unless userFriendlyErrors}}
         <p>Sorry, there was an internal server error while processing your request.</p>
       {{/unless}}
 
