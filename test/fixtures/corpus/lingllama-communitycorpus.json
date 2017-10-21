@@ -1,6 +1,6 @@
 {
    "_id": "corpus",
-   "_rev": "42-1db8fbef7b9144f7c984786a9a221878",
+   "_rev": "50-652a20322e696773482b140780fd6a99",
    "title": "Community Corpus",
    "titleAsUrl": "community_corpus",
    "description": "This is a corpus which is editable by anyone in the LingSync community. Anyone can add comments to data, import data, experiment and help suggestions for other community members.",
