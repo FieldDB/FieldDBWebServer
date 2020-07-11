@@ -56,7 +56,7 @@ class Media extends Component {
   render () {
     const media = this.props.media
     if (!media || !media.filename || !this.props.corpus) {
-      console.warn('Unable to render media, filename or corpus was missing', media, this.props.corpus)
+      // console.warn('Unable to render media, filename or corpus was missing', media, this.props.corpus)
       return (
         <span />
       )

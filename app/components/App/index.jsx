@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Q from 'q'
 import React, { Component } from 'react'
 
+FieldDBObject.warn = function () {};
 FieldDBObject.confirm = function (message, optionalLocale) {
   const deferred = Q.defer()
   console.warn('Not confirming: ', message)

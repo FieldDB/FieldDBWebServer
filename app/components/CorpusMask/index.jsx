@@ -68,7 +68,7 @@ class CorpusMaskContainer extends Component {
 
     const descriptionFormatted = marked(corpusMask.get('description') || '')
     const termsOfUse = corpusMask.get('termsOfUse') || ''
-    const termsOfUseFormatted = marked(termsOfUse)
+    const termsOfUseFormatted = marked(termsOfUse || '')
 
     return (
       <div>
@@ -196,7 +196,7 @@ class CorpusMaskContainer extends Component {
         </div>
         <hr />
         <footer>
-          <p>© {corpusMask.get('copyright')} {corpusMask.get('startYear')} - 2017 </p>
+          <p>© {corpusMask.get('copyright')} {corpusMask.get('startYear')} - 2020 </p>
           <div className='tabbable'>
             <ul className='nav nav-tabs'>
               <li className='active'><a href='#terms' data-toggle='tab'>Terms of Use for {corpusMask.get('title')}</a></li>
