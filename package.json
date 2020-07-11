@@ -1,6 +1,6 @@
 {
   "name": "fielddb-webserver",
-  "version": "5.10.3",
+  "version": "5.26.21",
   "description": "Web site for FieldDB corpora pages.",
   "homepage": "https://github.com/FieldDB/FieldDB/issues/milestones?state=closed",
   "repository": {
@@ -67,7 +67,7 @@
     "fielddb-web": "./bin/fielddb-web-server"
   },
   "engines": {
-    "node": "~4.0 || ~6.0"
+    "node": "~4.0 || ^6.0"
   },
   "scripts": {
     "build": "npm run webpack && gulp build",
