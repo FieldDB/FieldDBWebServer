@@ -7,7 +7,6 @@ var debug = require("debug")("server");
 var favicon = require("serve-favicon");
 var logger = require("morgan");
 var methodOverride = require("method-override");
-var session = require("express-session");
 var bodyParser = require("body-parser");
 var errorHandler = require("./middleware/error-handler").errorHandler;
 var consolidate = require("consolidate");
@@ -40,11 +39,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(favicon(__dirname + "/public/favicon.ico"));
 app.use(logger("common"));
 app.use(methodOverride());
-app.use(session({
-  resave: true,
-  saveUninitialized: true,
-  secret: config.session_key
-}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
