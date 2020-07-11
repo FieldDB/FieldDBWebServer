@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export NODE_TLS_REJECT_UNAUTHORIZED=0;
 cd $FIELDDB_HOME/FieldDBWebServer
 forever \
 start \
