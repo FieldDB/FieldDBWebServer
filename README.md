@@ -86,7 +86,6 @@ Suggested changes:
 
 * change the `port` to the port you want to use
 * change `ssl` to have the path of your ssl certificates and key,
-* change `session_key` to something else
 * change `corpus` to the corpus service you want to contact, and
 
 Production mode is controlled by an environment variable. Here is how you would set the environment variables if you are running the server via a non-privileged user `fielddb`.

@@ -39,7 +39,6 @@
     "consolidate": "^0.13.1",
     "debug": "^2.6.3",
     "express": "^4.13.3",
-    "express-session": "^1.11.3",
     "fielddb": "https://github.com/FieldDB/FieldDB.git",
     "forever": "^0.15.1",
     "handlebars": "^4.0.2",
