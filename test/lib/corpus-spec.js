@@ -93,7 +93,7 @@ describe("corpus lib", function() {
 
       getCorpusMask("lingllama-communitycorpus", done).then(function(mask) {
         expect(mask).to.be.defined;
-        expect(mask._rev).to.deep.equal("50-652a20322e696773482b140780fd6a99");
+        expect(mask._rev).to.deep.equal("64-9f86db77de4d7dc204a9fa65259e7f2c");
         expect(mask.fieldDBtype).to.deep.equal("CorpusMask");
         expect(mask.dbname).to.deep.equal("lingllama-communitycorpus");
         expect(mask.url).to.not.contain(corpusConfig.auth);
@@ -101,7 +101,7 @@ describe("corpus lib", function() {
         expect(mask.titleAsUrl).to.deep.equal("community_corpus");
         expect(mask.description).to.deep.equal("This is a corpus which is editable by anyone in the LingSync community. Anyone can add comments to data, import data, experiment and help suggestions for other community members.");
         expect(mask.copyright).to.deep.equal("lingllama");
-        expect(mask.fields.length).to.equal(18);
+        expect(mask.fields.length).to.equal(29);
         // console.log(JSON.stringify(mask, null, 2));
         expect(mask.termsOfUse).to.be.defined;
         expect(mask.termsOfUse).to.contain("Sample: The materials included in this corpus are available");
@@ -287,7 +287,7 @@ describe("corpus lib", function() {
           throw err;
         }).then(function(mask) {
           expect(mask).to.be.defined;
-          expect(mask._rev).to.deep.equal("50-652a20322e696773482b140780fd6a99");
+          expect(mask._rev).to.deep.equal("64-9f86db77de4d7dc204a9fa65259e7f2c");
           expect(mask.fieldDBtype).to.deep.equal("CorpusMask");
           expect(mask.dbname).to.deep.equal("lingllama-communitycorpus");
           expect(mask.title).to.deep.equal("Community Corpus");

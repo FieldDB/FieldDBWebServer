@@ -67,7 +67,7 @@
     "fielddb-web": "./bin/fielddb-web-server"
   },
   "engines": {
-    "node": "~4.0 || ~6.0"
+    "node": "^4.0 || ^6.0"
   },
   "scripts": {
     "build": "npm run webpack && gulp build",
