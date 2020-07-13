@@ -42,7 +42,8 @@ class CorpusMaskContainer extends Component {
     })
   }
   render () {
-    let {corpusMask} = this.props
+    let { corpusMask } = this.props
+    const fielddbCorpusMask = new CorpusMask(corpusMask.toJS())
 
     if (!corpusMask || !corpusMask.get('team')) {
       return (
@@ -68,7 +69,7 @@ class CorpusMaskContainer extends Component {
 
     const descriptionFormatted = marked(corpusMask.get('description') || '')
     const termsOfUse = corpusMask.get('termsOfUse') || ''
-    const termsOfUseFormatted = marked(termsOfUse)
+    const termsOfUseFormatted = marked(termsOfUse || '')
 
     return (
       <div>
@@ -160,7 +161,7 @@ class CorpusMaskContainer extends Component {
                 <h1 className='media-heading'>{corpusMask.get('title')}</h1>
                 <div className='media'>
                   <a href={`${corpusMask.get('prototypeApp').get('url')}/prototype/_design/prototype/user.html#login/${corpusMask.get('dbname')}`} className='pull-right'>
-                    <img src={'https://secure.gravatar.com/avatar/' + corpusMask.getIn(['connection', 'gravatar']) + '.jpg?s=96&d=retro&r=pg'} alt='Corpus image' className='media-object' />
+                    <img src={'https://secure.gravatar.com/avatar/' + fielddbCorpusMask.connection.gravatar + '.jpg?s=96&d=retro&r=pg'} alt='Corpus image' className='media-object' />
                   </a>
                   <div className='media-body'>
                     <div className='description' dangerouslySetInnerHTML={{
@@ -196,7 +197,7 @@ class CorpusMaskContainer extends Component {
         </div>
         <hr />
         <footer>
-          <p>© {corpusMask.get('copyright')} {corpusMask.get('startYear')} - 2017 </p>
+          <p>© {corpusMask.get('copyright')} {corpusMask.get('startYear')} - 2020 </p>
           <div className='tabbable'>
             <ul className='nav nav-tabs'>
               <li className='active'><a href='#terms' data-toggle='tab'>Terms of Use for {corpusMask.get('title')}</a></li>

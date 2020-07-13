@@ -73995,7 +73995,7 @@ function extend() {
 },{}],317:[function(require,module,exports){
 module.exports={
   "name": "fielddb",
-  "version": "5.121.19-rc0",
+  "version": "5.168.13-rc0",
   "description": "An offline/online field database which adapts to its user's terminology and I-Language",
   "homepage": "https://github.com/FieldDB/FieldDB/issues/milestones?state=closed",
   "repository": {
@@ -74072,7 +74072,7 @@ module.exports={
     "build:angular-client": "bash scripts/build_fielddb_angular_core.sh || echo 'this client is deprecated and might not build much longer'",
     "build:backbone-client": "bash scripts/build_fielddb_minified.sh",
     "build:min": "echo TODO",
-    "build:ci": "npm run lint && npm run test:jasmineAllTestsErrorWorkaround && npm test && npm run build && npm run build:min && npm run docs && npm run build:angular-client && npm run build:backbone-client",
+    "build:ci": "npm run lint && npm run test:jasmineAllTestsErrorWorkaround && npm test && npm run build && npm run build:min && npm run docs  && npm run build:backbone-client",
     "optionalPostinstall": "bower link || exit 0"
   },
   "license": "Apache-2.0"

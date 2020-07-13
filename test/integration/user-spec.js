@@ -40,7 +40,7 @@ describe("/v1", function() {
           expect(res.text).to.contain("Community Corpus");
           expect(res.text).to.contain("This is a corpus which is editable by anyone in the ");
           expect(res.text).to.contain("Private Corpus");
-          expect(res.text).to.match(/©.*lingllama.*2012.*-.*2017/);
+          expect(res.text).to.match(/©.*lingllama.*2012.*-.*2020/);
 
           done();
         });
