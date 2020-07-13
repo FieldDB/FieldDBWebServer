@@ -48,7 +48,7 @@ class UserMaskContainer extends Component {
         </div>
         <hr />
         <footer>
-          <p>© {userMask.get('username')} {userMask.get('startYear')}  2017
+          <p>© {userMask.get('username')} {userMask.get('startYear')} - 2020
           <a href='http://creativecommons.org/licenses/by/3.0/' rel='license' title='Creative Commons Attribution 3.0 License'>link
             <img src='//i.creativecommons.org/l/by/3.0/88x31.png' alt='License' />
           </a>

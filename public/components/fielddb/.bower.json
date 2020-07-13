@@ -1,6 +1,6 @@
 {
   "name": "fielddb",
-  "version": "5.5.29",
+  "version": "5.121.19-rc0",
   "homepage": "http://fielddb.github.io/FieldDB/",
   "bugs": {
     "url": "https://github.com/FieldDB/FieldDB/issues"
@@ -68,13 +68,13 @@
   "dependencies": {},
   "main": "fielddb.js",
   "devDependencies": {},
-  "_release": "5.5.29",
+  "_release": "5.121.19-rc0",
   "_resolution": {
     "type": "version",
-    "tag": "v5.5.29",
-    "commit": "6d248da3ef96a0faa7b64cee550a14a167db6f7b"
+    "tag": "v5.121.19-rc0",
+    "commit": "be23290812ef88c0648186517a0e66ca246c2c98"
   },
   "_source": "https://github.com/OpenSourceFieldlinguistics/bower-fielddb.git",
-  "_target": "^5.5.29",
+  "_target": "5.121.19-rc0",
   "_originalSource": "fielddb"
 }

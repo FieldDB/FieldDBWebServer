@@ -21,7 +21,7 @@ describe('Container::CorpusMask', function () {
       },
       children: [], // To avoid rendering the Search component
       corpusMask: Immutable.fromJS({
-        dbname: 222,
+        dbname: 'abc',
         title: 'the-corpusMask-title',
         team: {
           id: 1234,
@@ -30,6 +30,9 @@ describe('Container::CorpusMask', function () {
         fields: [],
         prototypeApp: {
           url: ''
+        },
+        connection: {
+          dbname: 'abc'
         }
       }),
       searchResults: Immutable.fromJS([])
@@ -42,6 +45,13 @@ describe('Container::CorpusMask', function () {
     })
 
     expect(doc).to.have.keys(['component', 'root', 'node', 'nodes', 'length', 'options', 'complexSelector'])
+
+    const images = doc.find('img')
+    expect(images).to.exist
+    expect(images.length).to.equal(2)
+
+    const avatar = images.nodes[0]
+    expect(avatar.getAttribute('src')).to.equal('https://secure.gravatar.com/avatar/900150983cd24fb0d6963f7d28e17f72.jpg?s=96&d=retro&r=pg')
   })
 
   it('should support OLAC metadata in header', function () {
@@ -52,8 +62,11 @@ describe('Container::CorpusMask', function () {
         teamname: 'someone'
       },
       corpusMask: Immutable.fromJS({
-        dbname: 222,
+        dbname: 'abc',
         title: 'the-corpusMask-title',
+        connection: {
+          dbname: 'abc'
+        },
         description: 'hi \n* a \n* list',
         dateCreated: 1411424261782,
         dateModified: 1490462360903,
@@ -61,7 +74,7 @@ describe('Container::CorpusMask', function () {
         copyright: 'Georgian Together Users',
         termsOfUse: 'any \nterms',
         team: {
-          id: 1234,
+          id: '123-efg',
           name: 'jack'
         },
         fields: [{
@@ -129,7 +142,10 @@ describe('Container::CorpusMask', function () {
         teamname: 'someone'
       },
       corpusMask: Immutable.fromJS({
-        dbname: 222,
+        dbname: 'abc',
+        connection: {
+          dbname: 'abc'
+        },
         title: 'the-corpusMask-title',
         description: 'hi \n* a \n* list',
         termsOfUse: 'some \nterms',
