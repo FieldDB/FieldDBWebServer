@@ -4,7 +4,7 @@ var supertest = require("supertest");
 
 var api = require("../../server");
 var specIsRunningTooLong = 5000;
-var LINGLLAMA_ACTIVITY_SIZE = 94;
+var LINGLLAMA_ACTIVITY_SIZE = 103;
 var COMMUNITY_GEORGIAN_ACTIVITY_SIZE = 218;
 
 var acceptSelfSignedCertificates = {
