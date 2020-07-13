@@ -1,0 +1,3 @@
+User-agent: SemrushBot
+Disallow: /
+
