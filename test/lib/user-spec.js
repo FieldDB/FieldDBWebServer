@@ -57,7 +57,7 @@ describe("user lib", function() {
         var titles = mask.corpora.map(function(connection) {
           return connection.title;
         }).sort();
-        expect(titles).to.deep.equal(["Georgian Together", "Migmaq", "Private Corpus"]);
+        expect(titles).to.deep.equal(["Georgian Together", "Learn Mi'gmaq", "Private Corpus"]);
         var gravatars = mask.corpora.map(function(connection) {
           return connection.gravatar;
         }).sort();
