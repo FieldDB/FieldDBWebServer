@@ -287,7 +287,7 @@ describe("corpus lib", function() {
           throw err;
         }).then(function(mask) {
           expect(mask).to.be.defined;
-          expect(mask._rev).to.deep.equal("50-652a20322e696773482b140780fd6a99");
+          expect(mask._rev).to.deep.equal("64-9f86db77de4d7dc204a9fa65259e7f2c");
           expect(mask.fieldDBtype).to.deep.equal("CorpusMask");
           expect(mask.dbname).to.deep.equal("lingllama-communitycorpus");
           expect(mask.title).to.deep.equal("Community Corpus");

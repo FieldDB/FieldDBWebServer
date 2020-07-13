@@ -10,7 +10,7 @@ class IGT extends Component {
     // console.log('igt is ', this.props.igt)
     const igt = fields.map((field) => {
       return (
-      this.props.igt[field.id]
+        this.props.igt[field.id]
       )
     }).filter(isEmpty).join(' <br/>')
     return (

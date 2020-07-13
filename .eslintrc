@@ -1,23 +1,22 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "standard",
+    "eslint:recommended",
+    "plugin:mocha/recommended",
     "standard-react"
   ],
   "plugins": [
     "babel",
+    "mocha",
     "react",
     "promise"
   ],
   "env": {
-    "mocha" : true
+    "mocha": true,
+    "node": true
   },
   "globals": {
-    "document": false,
-    "expect": false,
-    "navigator": false,
-    "sinon": false,
-    "window": false
+    "Symbol": false
   },
   "rules": {}
 }

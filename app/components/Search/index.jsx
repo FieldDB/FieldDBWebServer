@@ -48,7 +48,7 @@ class SearchContainer extends Component {
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
   }
 
-  static fetchData ({store, params, history, urls}) {
+  static fetchData ({store, params, urls}) {
     return SearchContainer.search({
       params,
       urls,
@@ -138,6 +138,7 @@ class SearchContainer extends Component {
   static search ({params, urls, store, corpus, loadSearchResults}) {
     corpus = corpus || new CorpusMask(store.getState().corpusMaskDetail.toJS())
     if (!corpus.datumFields || !corpus.datumFields.length) {
+      // eslint-disable-next-line no-console
       console.warn('Datum fields were not defined on this corpus', corpus.dbname)
       corpus.datumFields = []
     }
@@ -234,6 +235,7 @@ class SearchContainer extends Component {
       })
       .catch(function (err) {
         if (err.userFriendlyErrors && err.userFriendlyErrors[0] === 'no such index') {
+          // eslint-disable-next-line no-console
           console.log('This db has not been indexed, most likely it is private. ', err)
           return new DataList({
             id: id,
@@ -244,6 +246,7 @@ class SearchContainer extends Component {
             docs: []
           })
         }
+        // eslint-disable-next-line no-console
         console.log('error in search ', err)
         throw err
       })
@@ -310,7 +313,7 @@ class SearchContainer extends Component {
             className='btn btn-small btn-success'>
             <i className='icon-search icon-white' />
           Search…
-        </button>
+          </button>
         </form>
         <button type='button'
           onClick={this.handleReindex}
@@ -324,7 +327,7 @@ class SearchContainer extends Component {
           value={this.state.reindex.progress} >
           <div id='inner-search-progress-bar' className='inner-search-progress-bar'>
             <strong>{this.state.reindex.statusText}</strong> {this.state.reindex.total} records indexed
-        </div>
+          </div>
         </div>
         <span id='clearresults' className='hide'>
           <button type='button'

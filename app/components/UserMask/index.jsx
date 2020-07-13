@@ -25,7 +25,7 @@ class UserMaskContainer extends Component {
   render () {
     let {userMask} = this.props
     if (!userMask.get('username')) {
-      console.log('userMask', userMask)
+      // console.log('userMask not found', userMask)
       const err = new Error('Sorry, a user with this username was not found, please try again.')
       err.status = 404
       throw err
@@ -50,7 +50,7 @@ class UserMaskContainer extends Component {
         <footer>
           <p>© {userMask.get('username')} {userMask.get('startYear')} - 2020
           <a href='http://creativecommons.org/licenses/by/3.0/' rel='license' title='Creative Commons Attribution 3.0 License'>link
-            <img src='//i.creativecommons.org/l/by/3.0/88x31.png' alt='License' />
+          <img src='//i.creativecommons.org/l/by/3.0/88x31.png' alt='License' />
           </a>
           </p>
         </footer>

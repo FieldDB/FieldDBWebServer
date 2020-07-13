@@ -181,17 +181,17 @@ class CorpusMaskContainer extends Component {
               {this.props.children ? this.props.children : <Search corpus={corpusMask} params={searchParams} />}
             </div>
             {
-      this.props.searchResults.map((searchResult) => {
-        const id = searchResult.getIn(['datalist', 'id'])
-        if (corpusMask.get('dbname') !== searchResult.getIn(['datalist', 'dbname'])) {
-          return
-        }
+              this.props.searchResults.map((searchResult) => {
+                const id = searchResult.getIn(['datalist', 'id'])
+                if (corpusMask.get('dbname') !== searchResult.getIn(['datalist', 'dbname'])) {
+                  return
+                }
 
-        return (
-          <DataList key={'search-result-' + id} className='row-fluid' corpus={corpusMask} datalist={searchResult.get('datalist')} />
-        )
-      })
-      }
+                return (
+                  <DataList key={'search-result-' + id} className='row-fluid' corpus={corpusMask} datalist={searchResult.get('datalist')} />
+                )
+              })
+            }
 
           </div>
         </div>
@@ -217,7 +217,7 @@ class CorpusMaskContainer extends Component {
                   <li>
                     <dl>
                     EMELD digital language documentation Best Practices #7:
-                    <dt>Rights</dt>
+                      <dt>Rights</dt>
                       <dd>Resource creators, researchers and the speech communities who provide the primary data have different priorities over who has access to language resources.</dd>
                       <dt>Solution</dt>
                       <dd>Terms of use should be well documented, and enforced if necessary with encryption or licensing. It is important however to limit the duration of <a target='_blank' href='http://emeld.org/school/classroom/ethics/access.html'>access restrictions</a>: A resource whose access is permanently restricted to one user is of no long-term value since it cannot be used once that user is gone.</dd>

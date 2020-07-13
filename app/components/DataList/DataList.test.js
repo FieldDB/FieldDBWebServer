@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import fixtures from 'fixturefiles'
 import Immutable from 'immutable'
 import React from 'react'
@@ -5,12 +6,12 @@ import { shallow } from 'enzyme'
 
 import DataList from './index.jsx'
 
-describe('Component::DataList', function () {
-  const corpus = Immutable.fromJS(fixtures.corpus['community-georgian'])
-  function renderDoc (props) {
-    return shallow(<DataList {...props} />)
-  }
+const corpus = Immutable.fromJS(fixtures.corpus['community-georgian'])
+function renderDoc (props) {
+  return shallow(<DataList {...props} />)
+}
 
+describe('Component::DataList', function () {
   it('should render docs as a search result', function () {
     let doc = renderDoc({
       corpus: corpus,

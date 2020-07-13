@@ -19,7 +19,7 @@ class DataList extends Component {
       return (
         <div className='accordion'>
         DataList
-      </div>
+        </div>
       )
     }
 
@@ -41,25 +41,25 @@ class DataList extends Component {
             <li className='active'>
               <a href={'#highlights-' + datalistId} data-toggle='tab'>
               Highlights
-            </a>
+              </a>
             </li>
             <li>
               <a href={'#json-' + datalistId} data-toggle='tab'>
               JSON Results
-            </a>
+              </a>
             </li>
           </ul>
           <div className='tab-content'>
             <div className='tab-pane active' id={'highlights-' + datalistId}>
               <div className='accordion'>
                 {
-      docs.map((doc) => {
-        const docId = doc.get('id') ? doc.get('id') : Math.random() * 100
-        return (
-          <SearchResult key={datalistId + '-' + docId} datalistId={datalistId} corpus={this.props.corpus} result={doc} />
-        )
-      })
-      }
+                  docs.map((doc) => {
+                    const docId = doc.get('id') ? doc.get('id') : Math.random() * 100
+                    return (
+                      <SearchResult key={datalistId + '-' + docId} datalistId={datalistId} corpus={this.props.corpus} result={doc} />
+                    )
+                  })
+                }
               </div>
             </div>
             <div className={`tab-pane ${hidden}`} id={'json-' + datalistId}>

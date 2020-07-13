@@ -1,4 +1,6 @@
+import { expect } from 'chai'
 import { CALL_API } from 'middleware/api'
+import sinon from 'sinon'
 
 import * as actionCreator from './actions'
 
@@ -14,7 +16,7 @@ describe('Action::CorpusMask', function () {
       expect(callApi.path).to.equal(`/api/corpora/${dbname}`)
       expect(callApi.successType).to.equal(actionCreator.LOADED_CORPUS_MASK_DETAIL)
     })
-    it('navigates to root when request error', () => {
+    it('navigates to root when request error', function() {
       let mockHistory = {
         push: sinon.stub()
       }

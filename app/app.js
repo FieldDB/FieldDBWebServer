@@ -1,3 +1,4 @@
+/* global window, document */
 import 'babel-polyfill'
 import { browserHistory } from 'react-router'
 import Immutable from 'immutable'
@@ -17,6 +18,7 @@ if (window.__REDUX_STATE__) {
       reduxState[key] = Immutable.fromJS(val)
     })
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e)
   }
 }
@@ -27,4 +29,4 @@ ReactDOM.render((
   <Provider store={store}>
     { createRoutes(browserHistory) }
   </Provider>
-  ), document.getElementById('root'))
+), document.getElementById('root'))

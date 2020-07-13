@@ -72,7 +72,7 @@ function createRequestPromise (apiActionCreator, next, getState, dispatch) {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .query(params.query)
-      .end((err, res, body) => {
+      .end((err, res) => {
         if (err) {
           debug('received connection err', err)
           if (params.errorType) {

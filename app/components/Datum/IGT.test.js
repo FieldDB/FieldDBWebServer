@@ -1,15 +1,16 @@
+import { expect } from 'chai'
 import fixtures from 'fixturefiles'
 import React from 'react'
 import { shallow } from 'enzyme'
 
 import IGT from './IGT.jsx'
 
-describe('Component::IGT', function () {
-  const corpus = fixtures.corpus['community-georgian']
-  function renderDoc (props) {
-    return shallow(<IGT {...props} />)
-  }
+const corpus = fixtures.corpus['community-georgian']
+function renderDoc (props) {
+  return shallow(<IGT {...props} />)
+}
 
+describe('Component::IGT', function () {
   it('should render in the order of the corpus fields', function () {
     let doc = renderDoc({
       fields: corpus.datumFields,

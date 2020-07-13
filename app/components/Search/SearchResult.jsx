@@ -5,7 +5,6 @@ import Media from '../Media'
 import ParallelText from '../Datum/ParallelText.jsx'
 
 class SearchResult extends Component {
-
   componentDidMount () {
     this.render()
   }
@@ -37,25 +36,25 @@ class SearchResult extends Component {
               <input type='range' value={result.score * 10} min='0' max={maxScore} disabled />
               <br />
               {
-      summary.length ? summary.map((summaryLine) => {
-        return (
-          <span key={summaryLine}>
-            <span key={summaryLine} dangerouslySetInnerHTML={{
-              __html: summaryLine
-            }} />
-            <br />
-          </span>
-        )
-      }) : <ParallelText parallelText={igt.parallelText} />
-      }
+                summary.length ? summary.map((summaryLine) => {
+                  return (
+                    <span key={summaryLine}>
+                      <span key={summaryLine} dangerouslySetInnerHTML={{
+                        __html: summaryLine
+                      }} />
+                      <br />
+                    </span>
+                  )
+                }) : <ParallelText parallelText={igt.parallelText} />
+              }
 
               {
-      datum.media.map((media) => {
-        return (
-          <Media key={media.filename} media={media} corpus={this.props.corpus} />
-        )
-      })
-      }
+                datum.media.map((media) => {
+                  return (
+                    <Media key={media.filename} media={media} corpus={this.props.corpus} />
+                  )
+                })
+              }
             </span>
           </div>
           <div className='accordion-body collapse' id={'collapse-' + this.props.datalistId + '-' + datum._id} >
@@ -63,13 +62,13 @@ class SearchResult extends Component {
               <p className='igt'>
                 <label>Interlinear Glossed Text: </label>
                 {
-      igt.tuples.map((tuple) => {
-        const id = tuple.id ? tuple.id : Math.random() * 100
-        return (
-          <IGT key={id} igt={tuple} fields={datum.fields} />
-        )
-      })
-      }
+                  igt.tuples.map((tuple) => {
+                    const id = tuple.id ? tuple.id : Math.random() * 100
+                    return (
+                      <IGT key={id} igt={tuple} fields={datum.fields} />
+                    )
+                  })
+                }
               </p>
               <p className='parallel-text'>
                 <label>Parallel Text: </label>

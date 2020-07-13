@@ -1,6 +1,8 @@
+import { expect } from 'chai'
 import Immutable from 'immutable'
 import React from 'react'
 import { shallow } from 'enzyme'
+import sinon from 'sinon'
 
 import Corpora from './Corpora.jsx'
 import { CorpusMaskContainer } from './index.jsx'

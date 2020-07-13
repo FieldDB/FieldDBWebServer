@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import Immutable from 'immutable'
 import { Link } from 'react-router'
 import React from 'react'
@@ -5,8 +6,13 @@ import { shallow } from 'enzyme'
 
 import Corpora from './Corpora.jsx'
 
+function renderDoc (props) {
+  return shallow(<Corpora {...props} />)
+}
+
 describe('Component::Corpora', function () {
-  let props
+  let props;
+
   beforeEach(function () {
     props = {
       corpora: Immutable.fromJS([
@@ -27,12 +33,9 @@ describe('Component::Corpora', function () {
       ])
     }
   })
-  function renderDoc () {
-    return shallow(<Corpora {...props} />)
-  }
 
   it('renders corpora', function () {
-    let doc = renderDoc()
+    let doc = renderDoc(props)
     let corpusMaskComps = doc.find(Link)
 
     expect(corpusMaskComps.length).to.equal(props.corpora.size * 2)
