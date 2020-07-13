@@ -2304,10 +2304,10 @@ fbjs@^0.8.4, fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-fielddb@5.121.19-rc0:
-  version "5.121.19-rc0"
-  resolved "https://registry.yarnpkg.com/fielddb/-/fielddb-5.121.19-rc0.tgz#b9cddb3dbd8eafb16c63f85f06cd605f2bc3198c"
-  integrity sha512-14kciRrjmRICFdoHBq3Ws8x2N/uaogA+l2h94lDQ+7xd3y9lE2WIl/EhWhCCz8+bNIVHIcAiiyuxb5KxX05m5g==
+fielddb@^5.168.13-rc0:
+  version "5.168.13-rc0"
+  resolved "https://registry.yarnpkg.com/fielddb/-/fielddb-5.168.13-rc0.tgz#c0f9b3b25f1d9c4726b6807803541eeace48cc4f"
+  integrity sha512-EaJS7gHzIU8//QJ/q1IVLbHsrRt7TcoyObGAjJINBrnpZSoJcTXX4L7UlDies0h4y8pTsHG52zgpnxK/M3aBxQ==
   dependencies:
     atob "^2.1.2"
     bcryptjs "^2.4.3"
