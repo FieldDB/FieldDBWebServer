@@ -37,7 +37,7 @@ app.engine("html", consolidate.handlebars);
 app.set("view engine", ".html");
 app.set("views", path.join(__dirname, "views"));
 app.use(favicon(__dirname + "/public/favicon.ico"));
-app.use(logger("common"));
+app.use(logger("combined"));
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

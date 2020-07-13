@@ -138,7 +138,7 @@ class SearchContainer extends Component {
   static search ({params, urls, store, corpus, loadSearchResults}) {
     corpus = corpus || new CorpusMask(store.getState().corpusMaskDetail.toJS())
     if (!corpus.datumFields || !corpus.datumFields.length) {
-      console.warn('Datum fields were not defined on this corpus', corpus)
+      console.warn('Datum fields were not defined on this corpus', corpus.dbname)
       corpus.datumFields = []
     }
     corpus.datumFields.map(updateCorpusField)
