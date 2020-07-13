@@ -36,7 +36,7 @@ describe("/v1", function() {
 
           expect(res.text).to.contain("To install the Georgian Together app");
           expect(res.text).to.contain("notify the author(s) of the corpus (apps");
-          expect(res.text).to.match(/©.*Georgian Together Users.*-.*2017/);
+          expect(res.text).to.match(/©.*Georgian Together Users.*-.*2020/);
 
           done();
         });
