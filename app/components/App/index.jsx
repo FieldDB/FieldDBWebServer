@@ -3,12 +3,13 @@ import { FieldDBObject } from 'fielddb/api/FieldDBObject'
 import Helmet from 'react-helmet'
 import Q from 'q'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 FieldDBObject.todo = function () {}
 FieldDBObject.warn = function () {}
 FieldDBObject.confirm = function (message, optionalLocale) {
   const deferred = Q.defer()
-  console.warn('Not confirming: ', message)
+  // console.warn('Not confirming: ', message)
   deferred.reject({
     message: message,
     optionalLocale: optionalLocale,
@@ -16,9 +17,9 @@ FieldDBObject.confirm = function (message, optionalLocale) {
   })
   return deferred.promise
 }
-FieldDBObject.prompt = function (message, optionalLocale, providedInput) {
+FieldDBObject.prompt = function (message, optionalLocale) {
   const deferred = Q.defer()
-  console.warn('Not prompting: ', message)
+  // console.warn('Not prompting: ', message)
   deferred.reject({
     message: message,
     optionalLocale: optionalLocale,
@@ -47,7 +48,7 @@ class App extends Component {
           htmlAttributes={{
             'lang': 'en'
           }}
-      />
+        />
         {this.props.children}
       </div>
     )
@@ -55,10 +56,10 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.object.isRequired
+  children: PropTypes.object.isRequired
 }
 
-function mapStateToProps (state) {
+function mapStateToProps () {
   return {}
 }
 

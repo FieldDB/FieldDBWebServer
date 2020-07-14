@@ -2,6 +2,7 @@ import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import Corpora from '../Corpora/Corpora.jsx'
 import { loadUserMaskDetail } from './actions'
@@ -25,7 +26,7 @@ class UserMaskContainer extends Component {
   render () {
     let {userMask} = this.props
     if (!userMask.get('username')) {
-      console.log('userMask', userMask)
+      // console.log('username not found', this.props)
       const err = new Error('Sorry, a user with this username was not found, please try again.')
       err.status = 404
       throw err
@@ -50,7 +51,7 @@ class UserMaskContainer extends Component {
         <footer>
           <p>© {userMask.get('username')} {userMask.get('startYear')} - 2020
           <a href='http://creativecommons.org/licenses/by/3.0/' rel='license' title='Creative Commons Attribution 3.0 License'>link
-            <img src='//i.creativecommons.org/l/by/3.0/88x31.png' alt='License' />
+          <img src='//i.creativecommons.org/l/by/3.0/88x31.png' alt='License' />
           </a>
           </p>
         </footer>
@@ -66,9 +67,9 @@ function mapStateToProps (state) {
 }
 
 UserMaskContainer.propTypes = {
-  params: React.PropTypes.object.isRequired,
-  loadUserMaskDetail: React.PropTypes.func.isRequired,
-  userMask: React.PropTypes.object.isRequired
+  params: PropTypes.object.isRequired,
+  loadUserMaskDetail: PropTypes.func.isRequired,
+  userMask: PropTypes.object.isRequired
 }
 
 export { UserMaskContainer }

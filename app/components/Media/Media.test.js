@@ -1,18 +1,19 @@
+import { expect } from 'chai'
 import Immutable from 'immutable'
 import React from 'react'
 import { shallow } from 'enzyme'
 import fixtures from 'fixturefiles'
 import Media from './index.jsx'
 
-describe('Component::Media', function () {
-  const corpus = fixtures.corpus['community-georgian']
-  corpus.speech = {
-    url: 'https:/somewhere.org'
-  }
-  function renderDoc (props) {
-    return shallow(<Media {...props} />)
-  }
+const corpus = fixtures.corpus['community-georgian']
+corpus.speech = {
+  url: 'https:/somewhere.org'
+}
+function renderDoc (props) {
+  return shallow(<Media {...props} />)
+}
 
+describe('Component::Media', function () {
   it('should render audio', function () {
     let doc = renderDoc({
       corpus: Immutable.fromJS(corpus),

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
 class Gravatar extends Component {
@@ -17,8 +18,8 @@ class Gravatar extends Component {
 }
 
 Gravatar.propTypes = {
-  gravatar: React.PropTypes.string.isRequired,
-  link: React.PropTypes.string
+  gravatar: PropTypes.string.isRequired,
+  link: PropTypes.string
 }
 
 export default Gravatar

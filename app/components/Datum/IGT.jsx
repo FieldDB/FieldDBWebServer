@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 function isEmpty (value) {
   return value
@@ -10,7 +11,7 @@ class IGT extends Component {
     // console.log('igt is ', this.props.igt)
     const igt = fields.map((field) => {
       return (
-      this.props.igt[field.id]
+        this.props.igt[field.id]
       )
     }).filter(isEmpty).join(' <br/>')
     return (
@@ -22,8 +23,8 @@ class IGT extends Component {
 }
 
 IGT.propTypes = {
-  fields: React.PropTypes.object.isRequired,
-  igt: React.PropTypes.object.isRequired
+  fields: PropTypes.object.isRequired,
+  igt: PropTypes.object.isRequired
 }
 
 export default IGT

@@ -1,10 +1,12 @@
 import config from 'config'
+import { expect } from 'chai'
 import nock from 'nock'
+import sinon from 'sinon'
 import apiMiddleware, { CALL_API, CHAIN_API } from '../../middleware/api'
 
 describe('Middleware::Api', function () {
-  let store,
-    next
+  let store
+  let next
   let action
   beforeEach(function () {
     store = {
