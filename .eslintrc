@@ -3,13 +3,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:mocha/recommended",
-    "standard-react"
+    "plugin:react/recommended"
   ],
   "plugins": [
-    "babel",
     "mocha",
-    "react",
-    "promise"
+    "react"
   ],
   "env": {
     "mocha": true,
