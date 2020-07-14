@@ -92,7 +92,7 @@
     "crawl": "git://github.com/cesine/crawl.git",
     "enzyme": "^2.3.0",
     "eslint": "^4.18.2",
-    "eslint-plugin-mocha": "^6.0.0",
+    "eslint-plugin-mocha": "^5.0.0",
     "eslint-plugin-react": "^7.20.3",
     "fixturefiles": "^0.3.0",
     "gulp": "^3.9.1",
