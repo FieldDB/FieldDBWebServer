@@ -7,20 +7,17 @@ em {
 }
 
 .search-progress-bar {
-  width: 180px; 
-  height: 23px; 
-  border: 1px solid gray; 
+  width: 300px !important;
+  height: 23px;
+  border: 1px solid gray;
   background-color: #E9E9E9;
 }
 
 .inner-search-progress-bar {
-  font-size: .7em; 
-  height: 100%; 
-  color: white; 
-  text-align: right; 
-  line-height: 23px; 
-  width: 0px; 
-  background-color: #99356B;
+  font-size: .7em;
+  height: 100%;
+  line-height: 23px;
+  white-space: nowrap;
 }
 
 a.accordion-toggle {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { LanguageDatum } from 'fielddb/api/datum/LanguageDatum'
 import IGT from '../Datum/IGT.jsx'
 import Media from '../Media'
@@ -33,7 +34,7 @@ class SearchResult extends Component {
               href={'#collapse-' + this.props.datalistId + '-' + datum._id}
               name={datum._id}
               title={datum.context}>
-              <input type='range' value={result.score * 10} min='0' max={maxScore} disabled />
+              <input type='range' value={result.score * 10} min={0} max={maxScore} disabled />
               <br />
               {
                 summary.length ? summary.map((summaryLine) => {
@@ -84,9 +85,9 @@ class SearchResult extends Component {
 }
 
 SearchResult.propTypes = {
-  corpus: React.PropTypes.object.isRequired,
-  datalistId: React.PropTypes.string.isRequired,
-  result: React.PropTypes.object.isRequired
+  corpus: PropTypes.object.isRequired,
+  datalistId: PropTypes.string.isRequired,
+  result: PropTypes.object.isRequired
 }
 
 export default SearchResult

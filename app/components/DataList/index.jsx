@@ -1,5 +1,6 @@
 import marked from 'marked'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import SearchResult from '../Search/SearchResult.jsx'
 
 marked.setOptions({
@@ -74,9 +75,9 @@ class DataList extends Component {
 }
 
 DataList.propTypes = {
-  className: React.PropTypes.string.isRequired,
-  corpus: React.PropTypes.object.isRequired,
-  datalist: React.PropTypes.object.isRequired
+  className: PropTypes.string.isRequired,
+  corpus: PropTypes.object.isRequired,
+  datalist: PropTypes.object.isRequired
 }
 
 export default DataList

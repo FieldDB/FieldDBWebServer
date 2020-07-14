@@ -47,6 +47,7 @@
     "marked": "^0.3.6",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
+    "prop-types": "^15.7.2",
     "q": "^1.2.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",

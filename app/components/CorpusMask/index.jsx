@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 import Immutable from 'immutable'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { CorpusMask } from 'fielddb/api/corpus/CorpusMask'
 import { DatumFields } from 'fielddb/api/datum/DatumFields'
 import marked from 'marked'
@@ -220,6 +221,7 @@ class CorpusMaskContainer extends Component {
                       <dt>Rights</dt>
                       <dd>Resource creators, researchers and the speech communities who provide the primary data have different priorities over who has access to language resources.</dd>
                       <dt>Solution</dt>
+                      {/* eslint-disable-next-line react/jsx-no-target-blank */}
                       <dd>Terms of use should be well documented, and enforced if necessary with encryption or licensing. It is important however to limit the duration of <a target='_blank' href='http://emeld.org/school/classroom/ethics/access.html'>access restrictions</a>: A resource whose access is permanently restricted to one user is of no long-term value since it cannot be used once that user is gone.</dd>
                     </dl>
                   </li>
@@ -242,11 +244,11 @@ function mapStateToProps (state) {
 }
 
 CorpusMaskContainer.propTypes = {
-  children: React.PropTypes.object,
-  corpusMask: React.PropTypes.object.isRequired,
-  searchResults: React.PropTypes.object.isRequired,
-  params: React.PropTypes.object.isRequired,
-  loadCorpusMaskDetail: React.PropTypes.func.isRequired
+  children: PropTypes.object,
+  corpusMask: PropTypes.object.isRequired,
+  searchResults: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  loadCorpusMaskDetail: PropTypes.func.isRequired
 }
 
 export { CorpusMaskContainer }

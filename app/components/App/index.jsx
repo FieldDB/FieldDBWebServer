@@ -3,6 +3,7 @@ import { FieldDBObject } from 'fielddb/api/FieldDBObject'
 import Helmet from 'react-helmet'
 import Q from 'q'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 FieldDBObject.todo = function () {}
 FieldDBObject.warn = function () {}
@@ -55,7 +56,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.object.isRequired
+  children: PropTypes.object.isRequired
 }
 
 function mapStateToProps () {

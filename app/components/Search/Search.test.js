@@ -31,6 +31,11 @@ describe('Component::SearchContainer', function () {
     let element = doc.find('div')
 
     expect(element).to.exist
-    expect(element.length).to.equal(3)
+    expect(element.length).to.equal(1)
+
+    let inputs = doc.find('input')
+
+    expect(inputs).to.exist
+    expect(inputs.length).to.equal(1)
   })
 })

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { DataList } from 'fielddb/api/data_list/DataList'
 import { Corpus } from 'fielddb/api/corpus/Corpus'
 import { CorpusMask } from 'fielddb/api/corpus/CorpusMask'
@@ -37,10 +38,12 @@ class SearchContainer extends Component {
     super(props)
     const searchIn = this.props.params.searchIn || ''
     this.state = {
-      searchIn: searchIn,
+      searchIn,
       reindex: {
-        className: 'hide'
-      }
+        progress: 0,
+        show: false,
+        total: 100,
+      },
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -69,11 +72,16 @@ class SearchContainer extends Component {
   }
 
   handleReindex () {
-    this.state.reindex = {
-      progress: 0,
-      show: true,
-      total: 100
-    }
+    const searchIn = this.props.params.searchIn || this.state.searchIn
+
+    this.setState({
+      searchIn,
+      reindex: {
+        progress: 0,
+        show: true,
+        total: 100,
+      },
+    })
 
     const url = this.props.corpus.getIn(['lexicon', 'url']) + '/search/' + this.props.corpus.get('dbname') + '/index?limit=50'
     return CORS.makeCORSRequest({
@@ -81,25 +89,47 @@ class SearchContainer extends Component {
       url: url,
       withCredentials: false,
       onprogress: (progress) => {
-        this.state.reindex.total = progress.total
-        this.state.reindex.progress = progress.loaded
-      // this.state.reindex.progress = percent * this.state.reindex.total / 100
+        this.setState({
+          searchIn,
+          reindex: {
+            total: parseInt(progress.total, 10),
+            progress: parseInt(progress.loaded, 10),
+            show: true,
+            // progress: progress.loaded / progress.total * 100
+          },
+        })
       }
     // data: {}
-    }).then(function (response) {
+    }).then((response) => {
       const total = response.couchDBResult.rows.length
-      this.state.total = total
-      this.state.progress = total
+      const successState = {
+        searchIn,
+        reindex: {
+          total,
+          progress: total,
+          show: true,
+        },
+      }
+      this.setState(successState)
       setTimeout(() => {
-        this.state.show = false
-      })
-    }).catch(function (err) {
-      this.state.statusText = err.message
-      this.state.progress = 100
-      this.state.total = 100
+        successState.reindex.show = false;
+        this.setState(successState)
+      }, 1000)
+    }).catch((err) => {
+      const errState = {
+        searchIn,
+        reindex: {
+          statusText: err.message,
+          progress: 0,
+          show: true,
+          total: 100,
+        },
+      }
+      this.setState(errState)
       setTimeout(() => {
-        this.state.show = false
-      })
+        errState.reindex.show = false;
+        this.setState(errState)
+      }, 1000)
     })
   }
 
@@ -293,6 +323,8 @@ class SearchContainer extends Component {
       )
     }
 
+    const { reindex = {} } = this.state;
+
     return (
       <div className={this.props.className}>
         <form
@@ -320,15 +352,17 @@ class SearchContainer extends Component {
           className='btn btn-small btn-info'>
           <i className='icon-refresh icon-white' /> Rebuild search lexicon
         </button>
-        <div id='search-progress-bar'
-          className={'search-progress-bar' + this.state.reindex.className}
-          min='0'
-          max={this.state.reindex.total}
-          value={this.state.reindex.progress} >
-          <div id='inner-search-progress-bar' className='inner-search-progress-bar'>
-            <strong>{this.state.reindex.statusText}</strong> {this.state.reindex.total} records indexed
-          </div>
-        </div>
+        {reindex.show && <input id='search-progress-bar'
+          type='range'
+          className='search-progress-bar'
+          disabled
+          min={0}
+          max={reindex.total}
+          value={reindex.progress} >
+        </input>}
+        {reindex.show && <div id='inner-search-progress-bar' className='inner-search-progress-bar'>
+          <strong>{reindex.statusText}</strong> {reindex.total} records indexed &nbsp;
+        </div>}
         <span id='clearresults' className='hide'>
           <button type='button'
             id='clear_results'
@@ -343,10 +377,10 @@ class SearchContainer extends Component {
 }
 
 SearchContainer.propTypes = {
-  className: React.PropTypes.string,
-  corpus: React.PropTypes.object.isRequired,
-  loadSearchResults: React.PropTypes.func.isRequired,
-  params: React.PropTypes.object.isRequired
+  className: PropTypes.string,
+  corpus: PropTypes.object.isRequired,
+  loadSearchResults: PropTypes.func.isRequired,
+  params: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state) {

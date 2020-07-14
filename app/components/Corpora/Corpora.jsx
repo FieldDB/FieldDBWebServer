@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 import { List } from 'immutable'
 
@@ -38,8 +39,8 @@ class Corpora extends Component {
 }
 
 Corpora.propTypes = {
-  corpora: React.PropTypes.instanceOf(List).isRequired,
-  className: React.PropTypes.string.isRequired
+  corpora: PropTypes.instanceOf(List).isRequired,
+  className: PropTypes.string.isRequired
 }
 
 export default Corpora

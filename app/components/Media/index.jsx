@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 const audioExtensions = [
   '.3gp',
@@ -72,12 +73,14 @@ class Media extends Component {
       )
     } else if ((media.type && media.type.includes('image')) || imageExtensions.indexOf(extension) > -1) {
       return (
+        // eslint-disable-next-line react/jsx-no-target-blank
         <a target='_blank' href={url}>
           <img title={media.description} src={url} />
         </a>
       )
     } else {
       return (
+        // eslint-disable-next-line react/jsx-no-target-blank
         <a target='_blank' title={'Open ' + media.filename + ' in a new tab'} href={url}>{media.filename}</a>
       )
     }
@@ -85,8 +88,8 @@ class Media extends Component {
 }
 
 Media.propTypes = {
-  corpus: React.PropTypes.object.isRequired,
-  media: React.PropTypes.object.isRequired
+  corpus: PropTypes.object.isRequired,
+  media: PropTypes.object.isRequired
 }
 
 export default Media
