@@ -65,9 +65,6 @@
   "bin": {
     "fielddb-web": "./bin/fielddb-web-server"
   },
-  "engines": {
-    "node": "^4.0 || ^6.0"
-  },
   "scripts": {
     "build": "npm run webpack && gulp build",
     "build:production": "rimraf dist/ && NODE_ENV=production API_BASE_URL=http://localhost:8000 npm run webpack && API_BASE_URL=http://localhost:8000 NODE_ENV=production gulp build",
