@@ -1,6 +1,6 @@
 {
   "name": "fielddb-webserver",
-  "version": "5.168.13",
+  "version": "5.168.15",
   "description": "Web site for FieldDB corpora pages.",
   "homepage": "https://github.com/FieldDB/FieldDB/issues/milestones?state=closed",
   "repository": {
@@ -38,7 +38,7 @@
     "consolidate": "^0.13.1",
     "debug": "^2.6.3",
     "express": "^4.13.3",
-    "fielddb": "5.121.19-rc0",
+    "fielddb": "5.168.13-rc0",
     "forever": "^0.15.1",
     "handlebars": "^4.0.2",
     "history": "^1.17.0",
