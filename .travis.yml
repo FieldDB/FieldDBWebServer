@@ -7,6 +7,8 @@ node_js:
 script:
   - npm run lint
   - npm run lint:es6
+  - npm run test
+  - npm run test:ci
   - npm run build:production
   - npm run test
   - npm run test:ci
