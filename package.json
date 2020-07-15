@@ -1,6 +1,6 @@
 {
   "name": "fielddb-webserver",
-  "version": "5.26.21",
+  "version": "5.168.13",
   "description": "Web site for FieldDB corpora pages.",
   "homepage": "https://github.com/FieldDB/FieldDB/issues/milestones?state=closed",
   "repository": {
@@ -73,7 +73,7 @@
     "lint:es6": "eslint --fix --ext .jsx --ext .js app bin",
     "start": "./bin/fielddb-web-server",
     "start:watch": "NODE_PATH=./app concurrently --kill-others \"nodemon ./bin/fielddb-web-server\" \"node webpack.server.js\" \"gulp css:watch\"",
-    "start:production": "NODE_ENV=production PORT=8000 API_BASE_URL=http://localhost:8000 NODE_PATH=./app node bin/fielddb-web-server",
+    "start:production": "NODE_ENV=production ./bin/fielddb-web-server",
     "test": "NODE_ENV=test mocha test/**/*-spec.js",
     "test:ci": "NODE_ENV=test NODE_PATH=./app mocha --compilers js:babel-register -r app/spec/support/setup.mocha.js --recursive 'app/**/*.test.js'",
     "test:site": "node test/integration/links.js",

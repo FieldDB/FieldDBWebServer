@@ -158,18 +158,24 @@ $ NODE_ENV=production npm start
 
 To deploy this app to production environment:
 
-- Run `$ NODE_ENV=production npm install` on server
-  - After the installation above, `postinstall` script will run automatically, building front-end related assets and rev-ed server code under `dist/` folder.
+- Run `$ NODE_ENV=development npm install` on server
+  - After the installation above, then run `$ npm run build:production` which will build the front-end related assets and rev-ed server code under `dist/` folder.
 
 - Kick off the server with:
 
-` NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/server`
+`$ npm run start:production`
+
+- Once you're sure the server is operational, start the service with forever:
+
+`$./start_service`
 
 ## Release History
 * v1.62  activity heat map
 * v1.72  display of terms of use and elastic search integration
 * v3.19  refactored server.js into routes and updated express 2.x to 4.x
-
+* v3.21.15 migrated public urls from jade to handlebars
+* v5.4.21 migrated public urls from handlebars to react
+* v5.168.15 upgraded to node 12
 
 ## License
 Licensed under the Apache, 2.0 licenses.
