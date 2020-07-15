@@ -13,7 +13,6 @@ Mac:
 
 ```bash
 $ brew install node
-$ brew install yarn # optional, you can also use npm
 ```
 
 Linux:
@@ -31,7 +30,7 @@ You can download node from http://nodejs.org
 ### Install dependancies
 
 ```
-$ yarn install
+$ npm install
 ```
 
 ## Configure
@@ -45,13 +44,13 @@ You can create a `config/local.js` file to point to the corpus service you want 
 To turn on the server:
 
 ```bash
-$ yarn watch
+$ npm run watch
 ```
 
 To develop offline with fixture data:
 
 ```bash
-$ OFFLINE=true yarn start --offline
+$ OFFLINE=true npm start --offline
 ```
 
 Then open https://localhost:3182 and accept the security certificate warning since you are developing locally with a self signed certificate.
@@ -126,7 +125,7 @@ Redux server side render is based on from [mz026](https://github.com/mz026/unive
 - [Webpack](https://webpack.github.io/)@2.2
 - [Babel](https://babeljs.io/)@6
 - Express as isomorphic server
-- `yarn` as package manager
+- `npm` as package manager
 
 
 ### Testing:
@@ -152,14 +151,14 @@ To test your production build:
 
 ```bash
 $ gulp build
-$ NODE_ENV=production yarn start
+$ NODE_ENV=production npm start
 ```
 
 ## Deployment:
 
 To deploy this app to production environment:
 
-- Run `$ NODE_ENV=production yarn install` on server
+- Run `$ NODE_ENV=production npm install` on server
   - After the installation above, `postinstall` script will run automatically, building front-end related assets and rev-ed server code under `dist/` folder.
 
 - Kick off the server with:
