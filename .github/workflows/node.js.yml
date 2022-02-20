@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 16.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -25,17 +25,17 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run lint
-    - run: npm run lint:es6
-    - run: npm run test:ci
+        cache: 'yarn'
+    - run: yarn ci
+    #- run: yarn lint
+    #- run: yarn lint:es6
+    - run: yarn test:ci
 
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+    #- name: Coveralls
+    #  uses: coverallsapp/github-action@master
+    #  with:
+    #    github-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - run: npm run build:production
-    - run: npm run test
-    - run: npm run test:ci
+    # - run: yarn build:production
+    # - run: yarn test
+    # - run: yarn test:ci
