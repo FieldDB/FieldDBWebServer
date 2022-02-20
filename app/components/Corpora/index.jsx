@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Corpora from './Corpora.jsx'
@@ -34,8 +35,8 @@ class CorpusMaskContainer extends Component {
 }
 
 CorpusMaskContainer.propTypes = {
-  loadCorpora: React.PropTypes.func.isRequired,
-  corpora: React.PropTypes.object.isRequired
+  loadCorpora: PropTypes.func.isRequired,
+  corpora: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state) {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import Gravatar from './Gravatar.jsx'
 
@@ -37,9 +38,9 @@ class UserMask extends Component {
 }
 
 UserMask.propTypes = {
-  className: React.PropTypes.string.isRequired,
-  link: React.PropTypes.string,
-  user: React.PropTypes.object.isRequired
+  className: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  user: PropTypes.object.isRequired
 }
 
 export default UserMask

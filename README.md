@@ -13,7 +13,6 @@ Mac:
 
 ```bash
 $ brew install node
-$ brew install yarn # optional, you can also use npm
 ```
 
 Linux:
@@ -31,7 +30,7 @@ You can download node from http://nodejs.org
 ### Install dependancies
 
 ```
-$ yarn install
+$ npm install
 ```
 
 ## Configure
@@ -45,13 +44,13 @@ You can create a `config/local.js` file to point to the corpus service you want 
 To turn on the server:
 
 ```bash
-$ yarn watch
+$ npm run watch
 ```
 
 To develop offline with fixture data:
 
 ```bash
-$ OFFLINE=true yarn start --offline
+$ OFFLINE=true npm start --offline
 ```
 
 Then open https://localhost:3182 and accept the security certificate warning since you are developing locally with a self signed certificate.
@@ -126,7 +125,7 @@ Redux server side render is based on from [mz026](https://github.com/mz026/unive
 - [Webpack](https://webpack.github.io/)@2.2
 - [Babel](https://babeljs.io/)@6
 - Express as isomorphic server
-- `yarn` as package manager
+- `npm` as package manager
 
 
 ### Testing:
@@ -152,25 +151,31 @@ To test your production build:
 
 ```bash
 $ gulp build
-$ NODE_ENV=production yarn start
+$ NODE_ENV=production npm start
 ```
 
 ## Deployment:
 
 To deploy this app to production environment:
 
-- Run `$ NODE_ENV=production yarn install` on server
-  - After the installation above, `postinstall` script will run automatically, building front-end related assets and rev-ed server code under `dist/` folder.
+- Run `$ NODE_ENV=development npm install` on server
+  - After the installation above, then run `$ npm run build:production` which will build the front-end related assets and rev-ed server code under `dist/` folder.
 
 - Kick off the server with:
 
-` NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/server`
+`$ npm run start:production`
+
+- Once you're sure the server is operational, start the service with forever:
+
+`$./start_service`
 
 ## Release History
 * v1.62  activity heat map
 * v1.72  display of terms of use and elastic search integration
 * v3.19  refactored server.js into routes and updated express 2.x to 4.x
-
+* v3.21.15 migrated public urls from jade to handlebars
+* v5.4.21 migrated public urls from handlebars to react
+* v5.168.15 upgraded to node 12
 
 ## License
 Licensed under the Apache, 2.0 licenses.

@@ -7,7 +7,7 @@ import CorpusMaskContainer from '../CorpusMask'
 import UserMaskContainer from '../UserMask'
 import SearchContainer from '../Search'
 
-export default function (history) {
+export default function Routes(history) {
   return (
     <Router history={history}>
       <Route path='/' component={App}>

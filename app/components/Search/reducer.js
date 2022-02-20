@@ -17,6 +17,7 @@ export default function (state = defaultState, action) {
   switch (action.type) {
     case ActionType.LOADED_SEARCH_RESULTS:
       if (!action.payload || !action.payload.datalist) {
+        // eslint-disable-next-line no-console
         console.warn('LOADED_SEARCH_RESULTS invalid action structure', action)
         return
       }

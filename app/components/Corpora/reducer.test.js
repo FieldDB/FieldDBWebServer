@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import * as ActionType from './actions'
 import corpusMaskReducer from './reducer'
 

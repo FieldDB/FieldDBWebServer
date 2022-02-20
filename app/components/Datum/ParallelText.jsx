@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 function isEmpty (value) {
   return value
@@ -20,7 +21,7 @@ class ParallelText extends Component {
 }
 
 ParallelText.propTypes = {
-  parallelText: React.PropTypes.object.isRequired
+  parallelText: PropTypes.object.isRequired
 }
 
 export default ParallelText

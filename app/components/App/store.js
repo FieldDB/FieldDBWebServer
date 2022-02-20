@@ -9,7 +9,7 @@ const logger = createLogger({
   level: 'info',
   collapsed: false,
   logger: console,
-  predicate: (getState, action) => true
+  predicate: () => true
 })
 
 let middlewares = [
@@ -17,6 +17,7 @@ let middlewares = [
   apiMiddleware
 ]
 
+// By default: debug all state changes if in development mode
 if (process.env.NODE_ENV !== 'production') {
   middlewares = [...middlewares, logger]
 }

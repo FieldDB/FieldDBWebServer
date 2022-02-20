@@ -1,3 +1,4 @@
+import { expect } from 'chai'
 import { CALL_API } from '../../middleware/api'
 
 import * as actionCreator from './actions'

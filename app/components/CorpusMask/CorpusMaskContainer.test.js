@@ -1,7 +1,9 @@
+import { expect } from 'chai'
 import { browserHistory } from 'react-router'
 import Immutable from 'immutable'
 import { mount, shallow } from 'enzyme'
 import React from 'react'
+import sinon from 'sinon'
 
 import { CorpusMaskContainer } from './index.jsx'
 
