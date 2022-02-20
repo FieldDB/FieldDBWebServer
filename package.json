@@ -44,7 +44,7 @@
     "history": "^1.17.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.1.1",
-    "marked": "^0.3.6",
+    "marked": "^4.0.10",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "prop-types": "^15.7.2",
