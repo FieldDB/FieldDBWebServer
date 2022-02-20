@@ -1,8 +1,8 @@
 #ignore compiled handlebars
-release
-compiled_handlebars.js
-*.handlebars.js
-public/bundle.css
+# release
+# compiled_handlebars.js
+# *.handlebars.js
+# public/bundle.css
 
 #ignore private config files
 config/production.js
@@ -21,7 +21,7 @@ proguard.cfg
 
 node_modules
 gen
-dist
+# dist
 .tmp
 
 # Node #
