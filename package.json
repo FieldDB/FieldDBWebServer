@@ -23,7 +23,9 @@
     "Fieldlinguist <info@fieldlinguist.com>"
   ],
   "dependencies": {
-    "babel-register": "^6.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "bluebird": "2.10.0",
     "body-parser": "^1.13.3",
     "config": "^1.25.1",
