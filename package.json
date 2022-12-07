@@ -37,7 +37,7 @@
     "config": "^1.25.1",
     "consolidate": "^0.13.1",
     "debug": "^2.6.3",
-    "express": "^4.13.3",
+    "express": "^4.17.3",
     "fielddb": "5.168.13-rc0",
     "forever": "^0.15.1",
     "handlebars": "^4.0.2",
