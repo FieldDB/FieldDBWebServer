@@ -36,7 +36,7 @@
     "body-parser": "^1.13.3",
     "config": "^1.25.1",
     "consolidate": "^0.13.1",
-    "debug": "^2.6.3",
+    "debug": "^3.1.0",
     "express": "^4.13.3",
     "fielddb": "5.168.13-rc0",
     "forever": "^0.15.1",
